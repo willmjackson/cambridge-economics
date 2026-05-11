@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reading Economics at Cambridge — A Ledger of Colleges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3ecdc;
+  --paper-2:#ede4cf;
+  --paper-3:#e6dcc4;
+  --ink:#1b1612;
+  --ink-soft:#3b3328;
+  --ink-faint:#6f6450;
+  --rule:#231b14;
+  --oxblood:#6e1922;
+  --oxblood-soft:#8a2c33;
+  --camblue:#6f9c8f;       /* muted Cambridge greenish-blue */
+  --camblue-deep:#3b6a60;
+  --gold:#b08236;
+  --highlight:#f8e9b4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);}
+body{
+  font-family:"EB Garamond", "Iowan Old Style", Georgia, serif;
+  font-size:17px;
+  line-height:1.45;
+  font-feature-settings:"liga","onum";
+  background:
+    radial-gradient(ellipse 90% 60% at 20% 0%, rgba(176,130,54,.10), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 100% 100%, rgba(110,25,34,.06), transparent 60%),
+    var(--paper);
+  min-height:100vh;
+  background-attachment:fixed;
+}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;opacity:.7;
+}
+.wrap{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:42px 36px 90px;}
+
+/* MASTHEAD */
+.masthead{
+  border-top:7px double var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:14px 0 22px;
+  margin-bottom:28px;
+}
+.dateline{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:"Fraunces", serif;
+  font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-faint);
+  padding-bottom:6px;border-bottom:1px solid var(--ink-faint);
+  margin-bottom:18px;
+}
+.dateline em{font-style:italic;color:var(--oxblood);font-weight:600;letter-spacing:.18em}
+h1.title{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 144,"wght" 480,"SOFT" 50;
+  font-size:clamp(46px, 7.4vw, 104px);
+  line-height:.92;
+  letter-spacing:-.02em;
+  margin:0 0 8px;
+  color:var(--ink);
+  text-align:center;
+}
+h1.title em{
+  font-style:italic;font-variation-settings:"opsz" 144,"wght" 360,"SOFT" 100;
+  color:var(--oxblood);
+}
+.strap{
+  text-align:center;
+  font-family:"EB Garamond",serif;font-style:italic;
+  font-size:19px;color:var(--ink-soft);
+  margin:6px 0 0;
+}
+.strap .pip{display:inline-block;width:5px;height:5px;background:var(--oxblood);transform:rotate(45deg);margin:0 12px 3px;vertical-align:middle}
+
+/* HEADLINE STATS */
+.headline-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin:30px 0 36px;
+}
+.hs{
+  padding:22px 22px;
+  border-right:1px solid var(--ink-faint);
+  position:relative;
+}
+.hs:last-child{border-right:none}
+.hs .num{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 144,"wght" 380;
+  font-size:clamp(38px,4.2vw,58px);
+  line-height:1;
+  letter-spacing:-.02em;
+  color:var(--ink);
+  font-feature-settings:"lnum","tnum";
+}
+.hs .num small{font-size:.45em;color:var(--ink-faint);font-variation-settings:"wght" 350;margin-left:4px;letter-spacing:.04em}
+.hs .lbl{
+  margin-top:8px;
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 9,"wght" 500;
+  text-transform:uppercase;letter-spacing:.18em;
+  font-size:11px;color:var(--ink-faint);
+}
+.hs.accent .num{color:var(--oxblood)}
+
+/* EDITOR'S NOTE */
+.note{
+  display:grid;grid-template-columns:1fr 2.4fr;gap:36px;
+  padding:0 4px 28px;border-bottom:1px solid var(--ink-faint);
+  margin-bottom:30px;
+}
+.note h2{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 24,"wght" 460;
+  font-style:italic;font-size:32px;line-height:1.05;
+  margin:0;color:var(--ink);
+}
+.note h2 .ornament{color:var(--oxblood);font-style:normal;margin-right:6px}
+.note p{margin:0 0 12px;font-size:17.5px}
+.note p:first-of-type::first-letter{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 144,"wght" 500;
+  float:left;font-size:60px;line-height:.85;padding:6px 8px 0 0;color:var(--oxblood);
+}
+
+/* SECTION HEAD */
+.section-head{
+  display:flex;align-items:baseline;gap:18px;
+  border-bottom:2px solid var(--rule);
+  padding:18px 0 8px;margin:38px 0 18px;
+}
+.section-head h2{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 96,"wght" 420;
+  font-size:38px;margin:0;letter-spacing:-.01em;color:var(--ink);
+}
+.section-head h2 em{font-style:italic;color:var(--oxblood);font-variation-settings:"opsz" 96,"wght" 340}
+.section-head .meta{
+  margin-left:auto;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--ink-faint);
+}
+
+/* CONTROLS */
+.controls{
+  display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;
+  margin:0 0 18px;padding:14px 16px;
+  background:var(--paper-2);
+  border:1px solid var(--ink-faint);
+  border-radius:2px;
+  box-shadow:0 1px 0 var(--paper-3) inset, 1px 1px 0 rgba(0,0,0,.04);
+}
+.controls .label{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);
+  margin-right:4px;
+}
+.chip{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+  padding:6px 12px;border:1px solid var(--ink-faint);background:transparent;color:var(--ink-soft);
+  cursor:pointer;border-radius:999px;transition:all .15s;
+}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.accent.on{background:var(--oxblood);border-color:var(--oxblood)}
+.sep{width:1px;height:20px;background:var(--ink-faint);margin:0 4px}
+
+/* TMUA INPUT */
+.tmua-input{
+  display:flex;align-items:center;gap:10px;
+  margin-left:auto;
+}
+.tmua-input input[type=range]{
+  width:200px;accent-color:var(--oxblood);
+}
+.tmua-input .val{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 500;
+  font-size:24px;color:var(--oxblood);min-width:36px;text-align:center;
+  font-feature-settings:"tnum","lnum";
+}
+.tmua-input .lbl-mini{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+  line-height:1.1;
+}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;align-items:start;}
+@media(max-width:1100px){.layout{grid-template-columns:1fr}}
+.ledger{overflow-x:auto;}
+
+/* LEDGER TABLE */
+.ledger{
+  background:linear-gradient(180deg, var(--paper-2), var(--paper));
+  border:1px solid var(--rule);
+  padding:0;
+  box-shadow:0 2px 0 rgba(0,0,0,.04), 0 8px 24px rgba(40,30,16,.07);
+}
+table.ledger-tbl{
+  width:100%;border-collapse:collapse;
+  font-family:"EB Garamond",serif;
+  font-feature-settings:"tnum","lnum";
+}
+table.ledger-tbl thead th{
+  position:sticky;top:0;z-index:2;
+  background:var(--ink);color:var(--paper);
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 7px;text-align:right;cursor:pointer;
+  border-bottom:1px solid var(--rule);
+  white-space:nowrap;user-select:none;
+}
+table.ledger-tbl thead th:first-child{text-align:left;padding-left:14px}
+table.ledger-tbl thead th .sort-ind{opacity:.45;margin-left:4px;font-size:9px;letter-spacing:0}
+table.ledger-tbl thead th.sorted{background:var(--oxblood)}
+table.ledger-tbl thead th.sorted .sort-ind{opacity:1}
+table.ledger-tbl tbody tr{
+  border-bottom:1px solid rgba(35,27,20,.18);
+  cursor:pointer;transition:background .12s;
+}
+table.ledger-tbl tbody tr:nth-child(even){background:rgba(176,130,54,.05)}
+table.ledger-tbl tbody tr:hover{background:var(--highlight)}
+table.ledger-tbl tbody tr.selected{
+  background:rgba(110,25,34,.10);box-shadow:inset 4px 0 0 var(--oxblood);
+}
+table.ledger-tbl tbody tr.dimmed{opacity:.32}
+table.ledger-tbl tbody tr.match{
+  background:rgba(111,156,143,.22);
+  box-shadow:inset 4px 0 0 var(--camblue-deep);
+}
+table.ledger-tbl tbody tr.selected.match{
+  background:rgba(110,25,34,.12);box-shadow:inset 4px 0 0 var(--oxblood);
+}
+table.ledger-tbl td{
+  padding:9px 7px;text-align:right;font-size:15.5px;color:var(--ink);
+  vertical-align:middle;
+}
+table.ledger-tbl td.name{
+  text-align:left;padding-left:14px;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 420;
+  font-size:17.5px;color:var(--ink);
+  position:relative;
+}
+.tag{
+  display:inline-block;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  padding:2px 6px;margin-left:8px;border-radius:2px;color:var(--paper);background:var(--ink-faint);
+  vertical-align:1px;
+}
+.tag.mature{background:var(--camblue-deep)}
+.tag.women{background:var(--oxblood)}
+td .pct{color:var(--ink-faint);font-size:13px;margin-left:4px;font-feature-settings:"tnum"}
+td .small{font-size:13px;color:var(--ink-faint)}
+
+/* TMUA range bar */
+.tmua-bar{
+  position:relative;width:110px;height:18px;
+  display:inline-block;vertical-align:middle;
+  background:rgba(35,27,20,.06);border:1px solid rgba(35,27,20,.15);
+  border-radius:2px;
+}
+.tmua-bar .scale{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:flex-end;padding:0 2px;}
+.tmua-bar .tick{width:1px;height:3px;background:rgba(35,27,20,.25)}
+.tmua-bar .range{position:absolute;top:3px;bottom:3px;background:rgba(110,25,34,.18);border-radius:1px}
+.tmua-bar .range.offer{background:rgba(110,25,34,.55)}
+.tmua-bar .avg{
+  position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink);
+}
+.tmua-bar .avg.offer{background:var(--oxblood)}
+.tmua-bar .you{
+  position:absolute;top:-7px;width:0;height:0;
+  border-left:5px solid transparent;border-right:5px solid transparent;
+  border-top:7px solid var(--camblue-deep);
+  transform:translateX(-5px);
+  filter:drop-shadow(0 1px 0 rgba(0,0,0,.2));
+}
+.tmua-cell{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.tmua-cell .mini-lbl{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+}
+.tmua-cell .mini-row{display:flex;align-items:center;gap:8px;}
+.tmua-cell .mini-row .avg-val{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 460;
+  font-size:16px;color:var(--ink);min-width:30px;text-align:right;
+}
+.tmua-cell .mini-row .avg-val.offer{color:var(--oxblood)}
+
+/* OFFER RATE column */
+.rate-cell{display:flex;flex-direction:column;align-items:flex-end;gap:0;line-height:1.1;justify-content:center;}
+.rate-cell .v{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 480;
+  font-size:20px;color:var(--ink);font-feature-settings:"tnum";
+}
+.rate-cell .v.high{color:var(--camblue-deep)}
+.rate-cell .v.low{color:var(--oxblood)}
+.rate-cell .ratio{font-size:11px;color:var(--ink-faint);font-feature-settings:"tnum";letter-spacing:.04em;font-style:italic;}
+
+/* SPOTLIGHT PANEL */
+.spotlight{
+  position:sticky;top:18px;
+  max-height:calc(100vh - 36px);
+  overflow-y:auto;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  padding:24px 24px 28px;
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 8px 22px rgba(40,30,16,.08);
+  font-family:"EB Garamond",serif;
+  scrollbar-width:thin;scrollbar-color:var(--ink-faint) transparent;
+}
+.spotlight::-webkit-scrollbar{width:6px}
+.spotlight::-webkit-scrollbar-thumb{background:var(--ink-faint);border-radius:3px}
+.spotlight .crown{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--oxblood);
+  border-bottom:1px solid var(--ink-faint);padding-bottom:8px;margin-bottom:14px;
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.spotlight h3{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 96,"wght" 460;
+  font-size:38px;line-height:1;margin:0 0 4px;letter-spacing:-.01em;
+}
+.spotlight .sub{font-style:italic;color:var(--ink-soft);font-size:15px;margin:0 0 18px}
+.spotlight .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-bottom:18px}
+.spotlight .stat-grid .s{
+  border-top:1px solid var(--ink-faint);padding-top:8px;
+}
+.spotlight .stat-grid .s .v{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 96,"wght" 440;
+  font-size:30px;line-height:1;color:var(--ink);font-feature-settings:"tnum";
+}
+.spotlight .stat-grid .s .v.oxblood{color:var(--oxblood)}
+.spotlight .stat-grid .s .l{
+  margin-top:4px;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+}
+
+.detail-section{margin-top:20px}
+.detail-section h4{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0 0 10px;
+  border-bottom:1px solid var(--ink-faint);padding-bottom:4px;
+}
+
+/* Big TMUA chart in spotlight */
+.tmua-big{
+  position:relative;height:120px;margin:8px 0 14px;
+  border-left:1px solid var(--ink-faint);border-bottom:1px solid var(--ink-faint);
+  padding:0;
+}
+.tmua-big .row-lbl{
+  position:absolute;left:-2px;transform:translate(-100%,-50%);
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+  white-space:nowrap;padding-right:10px;
+}
+.tmua-big .scale-line{
+  position:absolute;left:0;right:0;height:1px;background:rgba(35,27,20,.10);
+}
+.tmua-big .scale-mark{
+  position:absolute;bottom:-22px;
+  transform:translateX(-50%);
+  font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ink-faint);
+}
+.tmua-big .range-bar{
+  position:absolute;height:10px;border-radius:5px;
+}
+.tmua-big .range-bar.app{background:rgba(110,25,34,.18);border:1px solid rgba(110,25,34,.35)}
+.tmua-big .range-bar.off{background:rgba(110,25,34,.55);border:1px solid rgba(110,25,34,.85)}
+.tmua-big .avg-tick{
+  position:absolute;width:2px;height:14px;background:var(--ink);
+}
+.tmua-big .avg-tick.off{background:var(--oxblood);height:18px}
+.tmua-big .avg-label{
+  position:absolute;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 500;
+  font-size:13px;
+  transform:translateX(-50%);
+}
+.tmua-big .you-mark{
+  position:absolute;width:0;height:0;
+  border-left:7px solid transparent;border-right:7px solid transparent;
+  border-bottom:11px solid var(--camblue-deep);
+  transform:translateX(-7px);
+}
+.tmua-big .you-label{
+  position:absolute;top:-32px;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 600;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--camblue-deep);
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
+
+/* gender bar */
+.dual-bar{
+  display:flex;height:28px;background:rgba(35,27,20,.05);
+  border:1px solid rgba(35,27,20,.15);font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 9,"wght" 500;font-size:11px;letter-spacing:.06em;
+  overflow:hidden;border-radius:2px;
+}
+.dual-bar .seg{
+  display:flex;align-items:center;justify-content:center;color:var(--paper);
+  font-feature-settings:"tnum";
+}
+.dual-bar .seg.men{background:var(--camblue-deep)}
+.dual-bar .seg.women{background:var(--oxblood)}
+.dual-bar .seg.other{background:var(--gold)}
+.dual-bar .seg.empty{background:transparent;color:var(--ink-faint)}
+.dual-bar.compact{height:20px;font-size:10px}
+
+/* note in spotlight */
+.spotlight .footnote{
+  font-style:italic;font-size:13.5px;color:var(--ink-soft);margin-top:14px;
+  border-top:1px dashed var(--ink-faint);padding-top:10px;
+}
+
+/* UK SECTION */
+.uk-section{
+  margin-top:50px;
+}
+.uk-intro{
+  display:grid;grid-template-columns:1.05fr 1.6fr;gap:36px;
+  align-items:start;
+  margin-bottom:24px;
+}
+.uk-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--rule);
+  background:linear-gradient(180deg, rgba(111,156,143,.10), rgba(111,156,143,.02));
+}
+.uk-stat{
+  padding:18px 18px;
+  border-right:1px solid var(--ink-faint);
+  border-bottom:1px solid var(--ink-faint);
+}
+.uk-stat:nth-child(2n){border-right:none}
+.uk-stat:nth-child(3),.uk-stat:nth-child(4){border-bottom:none}
+.uk-stat .num{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 96,"wght" 380;
+  font-size:clamp(28px,3.2vw,42px);line-height:1;letter-spacing:-.01em;
+  color:var(--ink);font-feature-settings:"lnum","tnum";
+}
+.uk-stat .num small{font-size:.5em;color:var(--ink-faint);font-variation-settings:"wght" 350;margin-left:2px;letter-spacing:.04em}
+.uk-stat.accent .num{color:var(--camblue-deep)}
+.uk-stat .lbl{
+  margin-top:7px;font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+}
+.uk-narr{
+  font-family:"EB Garamond",serif;
+  font-size:16.5px;line-height:1.5;color:var(--ink);
+  border-left:3px solid var(--camblue-deep);
+  padding:4px 0 4px 22px;
+}
+.uk-narr p{margin:0 0 12px}
+.uk-narr p:last-child{margin-bottom:0}
+.uk-narr em{color:var(--camblue-deep);font-style:italic;font-weight:600}
+.uk-narr strong{color:var(--ink);font-weight:600}
+
+.uk-controls{
+  display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;
+  margin:24px 0 14px;padding:12px 16px;
+  background:rgba(111,156,143,.08);
+  border:1px solid var(--ink-faint);
+}
+.uk-controls .chip.on{background:var(--camblue-deep);border-color:var(--camblue-deep);color:var(--paper)}
+
+.uk-table-wrap{
+  background:var(--paper-2);border:1px solid var(--rule);overflow-x:auto;
+  box-shadow:0 2px 0 rgba(0,0,0,.04), 0 8px 24px rgba(40,30,16,.07);
+}
+table.uk-tbl{width:100%;border-collapse:collapse;font-family:"EB Garamond",serif;font-feature-settings:"tnum","lnum";}
+table.uk-tbl thead th{
+  background:var(--camblue-deep);color:var(--paper);
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 10px;text-align:right;
+  border-bottom:1px solid var(--rule);
+  white-space:nowrap;
+}
+table.uk-tbl thead th:first-child{text-align:left;padding-left:16px}
+table.uk-tbl tbody tr{border-bottom:1px solid rgba(35,27,20,.18);transition:background .12s;cursor:pointer}
+table.uk-tbl tbody tr:nth-child(even){background:rgba(111,156,143,.05)}
+table.uk-tbl tbody tr:hover{background:rgba(111,156,143,.18)}
+table.uk-tbl tbody tr.selected{background:rgba(111,156,143,.22);box-shadow:inset 4px 0 0 var(--camblue-deep);}
+table.uk-tbl td{padding:11px 10px;text-align:right;vertical-align:middle;font-size:15.5px;color:var(--ink);}
+table.uk-tbl td.name{
+  text-align:left;padding-left:16px;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 420;font-size:17px;
+}
+table.uk-tbl .apps-cell{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+table.uk-tbl .apps-cell .nums{
+  font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.02em;
+  min-width:74px;text-align:right;
+}
+table.uk-tbl .apps-cell .total{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 460;font-size:18px;color:var(--ink);
+}
+.sparkline{width:78px;height:24px;display:block}
+.trend-pill{
+  display:inline-block;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11px;letter-spacing:.06em;
+  padding:3px 9px;border-radius:999px;
+  font-feature-settings:"tnum";
+}
+.trend-pill.up{background:rgba(111,156,143,.22);color:var(--camblue-deep)}
+.trend-pill.down{background:rgba(110,25,34,.13);color:var(--oxblood)}
+.trend-pill.flat{background:rgba(35,27,20,.07);color:var(--ink-faint)}
+
+.dp-bar{
+  display:inline-flex;height:18px;width:100px;
+  border:1px solid rgba(35,27,20,.2);overflow:hidden;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;font-size:10px;color:var(--paper);
+}
+.dp-bar .seg{display:flex;align-items:center;justify-content:center;}
+.dp-bar .seg.direct{background:var(--camblue-deep)}
+.dp-bar .seg.pool{background:var(--gold)}
+.dp-bar .seg.empty{background:transparent;color:var(--ink-faint)}
+.dp-cell{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.dp-cell .mini{font-size:11px;color:var(--ink-faint);font-feature-settings:"tnum"}
+
+.uk-rate{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 480;
+  font-size:20px;color:var(--camblue-deep);font-feature-settings:"tnum";
+}
+.uk-rate.low{color:var(--oxblood)}
+.uk-rate.high{color:var(--camblue-deep)}
+.uk-rate-sub{font-size:11px;color:var(--ink-faint);font-style:italic;font-feature-settings:"tnum"}
+
+.delta{
+  font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.02em;
+}
+.delta.up{color:var(--camblue-deep)}
+.delta.down{color:var(--oxblood)}
+.delta.flat{color:var(--ink-faint)}
+
+.uk-foot{
+  margin-top:14px;font-style:italic;color:var(--ink-faint);font-size:13.5px;
+}
+
+@media(max-width:900px){
+  .uk-intro{grid-template-columns:1fr}
+  .uk-narr{border-left:none;border-top:3px solid var(--camblue-deep);padding:14px 0 0}
+}
+
+/* MAP / SCATTER */
+.scatter-wrap{
+  background:var(--paper-2);border:1px solid var(--rule);
+  padding:30px 28px 24px;margin-top:34px;position:relative;
+}
+.scatter-wrap h3{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 48,"wght" 440;
+  font-size:26px;margin:0 0 4px;
+}
+.scatter-wrap .sub{font-style:italic;color:var(--ink-soft);margin:0 0 22px;font-size:15.5px}
+.scatter-wrap svg{display:block;max-width:100%;height:auto;font-family:"EB Garamond",serif;}
+
+.legend{
+  display:flex;gap:22px;flex-wrap:wrap;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+  margin-top:14px;border-top:1px solid var(--ink-faint);padding-top:12px;
+}
+.legend .key{display:flex;align-items:center;gap:7px;}
+.legend .swatch{width:14px;height:14px;border-radius:50%}
+.legend .swatch.app{background:rgba(110,25,34,.25);border:1px solid rgba(110,25,34,.4)}
+.legend .swatch.off{background:rgba(110,25,34,.7)}
+.legend .swatch.cb{background:var(--camblue-deep)}
+.legend .swatch.line{background:var(--ink);height:2px;border-radius:0;width:20px}
+
+footer{
+  margin-top:60px;padding-top:24px;border-top:7px double var(--rule);
+  font-style:italic;color:var(--ink-faint);font-size:14.5px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+footer p{margin:0 0 8px}
+footer strong{font-style:normal;color:var(--ink-soft);font-weight:500}
+
+@media(max-width:760px){
+  .wrap{padding:24px 16px 60px}
+  .headline-stats{grid-template-columns:1fr 1fr}
+  .hs{border-bottom:1px solid var(--ink-faint)}
+  .hs:nth-child(3),.hs:nth-child(4){border-bottom:none}
+  .hs:nth-child(2n){border-right:none}
+  .note{grid-template-columns:1fr}
+  .controls{flex-direction:column;align-items:flex-start}
+  .tmua-input{margin-left:0;width:100%}
+  table.ledger-tbl{font-size:14px}
+  table.ledger-tbl td.name{font-size:16px}
+  footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="dateline">
+    <span>Vol. I &nbsp;·&nbsp; No. 1</span>
+    <span><em>Compiled for Joe</em></span>
+    <span>Michaelmas &nbsp;·&nbsp; Anno MMXXVI</span>
+  </div>
+  <h1 class="title">Reading <em>Economics</em><br>at Cambridge</h1>
+  <p class="strap">A ledger of colleges &amp; their competition <span class="pip"></span> twenty-three contenders, weighed and measured</p>
+</header>
+
+<section class="headline-stats" id="headlineStats">
+  <div class="hs"><div class="num" id="hs-apps">1,508</div><div class="lbl">Applicants, 2025 cycle</div></div>
+  <div class="hs accent"><div class="num" id="hs-offers">163</div><div class="lbl">Offers made</div></div>
+  <div class="hs"><div class="num" id="hs-rate">10<small>·8%</small></div><div class="lbl">Overall offer rate</div></div>
+  <div class="hs"><div class="num">9·0<small>/9</small></div><div class="lbl">Highest TMUA awarded</div></div>
+</section>
+
+<section class="note">
+  <h2><span class="ornament">¶</span>An editor's<br><em>note</em></h2>
+  <div>
+    <p>Twenty-three of Cambridge's standard undergraduate colleges admit candidates for Economics (L100). Of last year's <strong>1,508 applicants</strong> to these colleges, roughly one in nine received an offer. The competition is fierce — but it is not <em>uniform</em>. Some colleges receive twice the applicants per place of their neighbours; some weigh the TMUA harder; some lean heavily on the winter pool.</p>
+    <p>What follows is the ledger. Sort the columns as you like, click a college to examine it in detail, and try plugging in a TMUA score to see where you would land among each college's offer-holders. The figures come from two Cambridge FOI releases (Aug &amp; Sept 2025) and the University's published admissions statistics for the 2024 cycle. <em>The mature colleges (Hughes Hall, Lucy Cavendish, St Edmund's) and women-only Murray Edwards are not shown — their admissions profiles differ enough that side-by-side comparison is misleading.</em></p>
+  </div>
+</section>
+
+<div class="section-head">
+  <h2>The <em>Ledger</em></h2>
+  <span class="meta">click any column to sort &nbsp;·&nbsp; click any row to examine</span>
+</div>
+
+<div class="controls">
+  <span class="label">Showing 23 standard undergraduate colleges</span>
+  <span class="sep"></span>
+  <div class="tmua-input">
+    <span class="lbl-mini">Your<br>TMUA</span>
+    <input type="range" id="tmuaScore" min="1" max="9" step="0.1" value="0" />
+    <span class="val" id="tmuaVal">—</span>
+    <span id="tmuaMatchHint" class="lbl-mini" style="color:var(--camblue-deep);max-width:180px"></span>
+    <button class="chip" id="tmuaClear">Clear</button>
+  </div>
+</div>
+
+<div class="layout">
+
+<div class="ledger">
+  <table class="ledger-tbl" id="ledgerTbl">
+    <thead>
+      <tr>
+        <th data-sort="name" data-dir="asc">College <span class="sort-ind">▲</span></th>
+        <th data-sort="apps" data-dir="desc">Apps <span class="sort-ind"></span></th>
+        <th data-sort="offers" data-dir="desc">Offers <span class="sort-ind"></span></th>
+        <th data-sort="rate" data-dir="desc" class="sorted">Offer rate <span class="sort-ind">▼</span></th>
+        <th data-sort="tmuaApp" data-dir="desc">TMUA · applicant avg <span class="sort-ind"></span></th>
+        <th data-sort="tmuaOffer" data-dir="desc">TMUA · offer-holder avg <span class="sort-ind"></span></th>
+        <th data-sort="fmRate" data-dir="desc">F·Maths A* · % of offers <span class="sort-ind"></span></th>
+      </tr>
+    </thead>
+    <tbody id="ledgerBody"></tbody>
+  </table>
+</div>
+
+<aside class="spotlight" id="spotlight">
+  <!-- populated by JS -->
+</aside>
+
+</div>
+
+<section class="uk-section">
+  <div class="section-head">
+    <h2>Through <em>UK eyes</em></h2>
+    <span class="meta">home applicants &nbsp;·&nbsp; three-year aggregate &nbsp;·&nbsp; 2023 – 25</span>
+  </div>
+
+  <div class="uk-intro">
+    <div class="uk-stats">
+      <div class="uk-stat"><div class="num" id="uk-apps">2,179</div><div class="lbl">UK applications · 3 yrs</div></div>
+      <div class="uk-stat accent"><div class="num" id="uk-offers">297</div><div class="lbl">UK offers · 3 yrs</div></div>
+      <div class="uk-stat"><div class="num" id="uk-rate">13·6<small>%</small></div><div class="lbl">UK offer rate · aggregate</div></div>
+      <div class="uk-stat"><div class="num" id="uk-trendnum">14·9 → 12·8<small>%</small></div><div class="lbl">UK offer rate · 2023 → 2025</div></div>
+    </div>
+    <div class="uk-narr">
+      <p><strong>The trend, in a sentence.</strong> Home applications to the standard Economics colleges climbed roughly a <em>third</em> in three years (612 → 805), while UK offers grew far more slowly (91 → 103). The result: a Home applicant's chances slipped from <em>14.9%</em> in 2023 to <em>12.8%</em> in 2025.</p>
+      <p>The growth is unevenly distributed. <strong>St John's</strong>, <strong>King's</strong>, <strong>Homerton</strong>, <strong>Trinity Hall</strong> and <strong>Clare</strong> have all seen Home applications grow by half or more in three years; <strong>Pembroke</strong>, <strong>Sidney Sussex</strong> and <strong>Magdalene</strong> have fallen. The other thing worth noticing is the <em>winter pool</em>: at <strong>Girton</strong> and <strong>Homerton</strong> in particular, a large share of recent UK offers were made through the pool rather than direct — meaning these colleges effectively recruit from candidates first allocated elsewhere.</p>
+    </div>
+  </div>
+
+  <div class="uk-controls">
+    <span class="label">Sort by</span>
+    <button class="chip on" data-uksort="rate">UK offer rate</button>
+    <button class="chip" data-uksort="apps">UK applications</button>
+    <button class="chip" data-uksort="growth">Application growth</button>
+    <button class="chip" data-uksort="pool">Pool share</button>
+    <button class="chip" data-uksort="name">A → Z</button>
+  </div>
+
+  <div class="uk-table-wrap">
+    <table class="uk-tbl" id="ukTbl">
+      <thead>
+        <tr>
+          <th>College</th>
+          <th>UK applications · 2023→25</th>
+          <th>Trend</th>
+          <th>UK offers</th>
+          <th>Direct · Pool</th>
+          <th>UK offer rate (3y)</th>
+          <th>vs all-domicile rate ’25</th>
+        </tr>
+      </thead>
+      <tbody id="ukBody"></tbody>
+    </table>
+  </div>
+
+  <p class="uk-foot">Source: Cambridge FOI 2025/801 (Sinclair), released 26 August 2025. Apps grouped by Entry Year. “Direct” offers are made by the college a candidate applied to; “Pool” offers come via the Winter Pool — a stage where candidates not made an offer by their first-choice college can be reconsidered by others.</p>
+</section>
+
+<section class="scatter-wrap">
+  <h3>A map of <em>competition</em></h3>
+  <p class="sub">Each college plotted by the calibre of its offer-holders (average TMUA, horizontal) against how readily it makes offers (vertical). The bubble size shows applicant volume; oxblood fill marks the average TMUA of offer-holders.</p>
+  <svg id="scatter" viewBox="0 0 920 460" preserveAspectRatio="xMidYMid meet"></svg>
+  <div class="legend">
+    <div class="key"><span class="swatch app"></span> Bubble size = applications</div>
+    <div class="key"><span class="swatch off"></span> Average TMUA, offer-holders</div>
+    <div class="key"><span class="swatch cb"></span> Your TMUA score</div>
+    <div class="key"><span class="swatch line"></span> Subject-wide offer rate (11.8%)</div>
+  </div>
+</section>
+
+<section class="scatter-wrap" style="margin-top:34px">
+  <h3>The <em>shift</em> from applicants to offer-holders</h3>
+  <p class="sub">Each college is an arrow. The base (faint dot) sits where the applicant pool averages on TMUA (horizontal) and on the share holding A* in Further Maths (vertical). The tip (oxblood) sits where the offer-holders land. The longer and steeper the arrow, the more sharply the college selects on these two measures.</p>
+  <svg id="shift" viewBox="0 0 920 560" preserveAspectRatio="xMidYMid meet"></svg>
+  <div class="legend">
+    <div class="key"><span class="swatch app"></span> Applicant pool</div>
+    <div class="key"><span class="swatch off"></span> Offer-holders</div>
+    <div class="key"><span style="display:inline-block;width:24px;height:1px;background:var(--ink-faint);position:relative;top:-4px"></span>&nbsp;&nbsp;Solid arrow = exact data &nbsp;·&nbsp; dashed = <em>&lt;3</em> redaction</div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <p><strong>Sources</strong></p>
+    <p>Economics-specific figures: University of Cambridge, FOI 2025/907 (Turnfield), released 23 September 2025, Apply Year 2025.</p>
+    <p>College-level admissions context (state-school proportion, gender): University of Cambridge <em>Undergraduate Admissions Statistics, 2024 Cycle</em>, Tables 2.3 &amp; 5.2.</p>
+  </div>
+  <div>
+    <p><strong>Notes</strong></p>
+    <p><em>“&lt;3” entries</em> in the FOI data indicate counts redacted for privacy (fewer than three). They are shown here as <em>&lt;3</em> with the offer-count denominator made explicit.</p>
+    <p><em>Mature colleges</em> (Hughes Hall, Lucy Cavendish, St Edmund's) and the <em>women-only</em> Murray Edwards have been excluded from every view on this page — their admissions profiles are very different and direct comparison can be misleading. Newnham &amp; Wolfson do not offer Economics.</p>
+    <p><em>“Direct” offers</em> are those made by the college a candidate applied to. <em>“Pool” offers</em> come via the Winter Pool, a stage where candidates not offered by their first-choice college can be reconsidered by others.</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+
+// Economics (L100) 2025 cycle FOI data + general college admissions context (2024 cycle).
+// gen.appsAll = total applications across all subjects (Table 5.2, all domiciles)
+// gen.offersAll = total offers across all subjects (Table 5.2)
+// gen.menApps / .womenApps / .menOffers / .womenOffers from Table 5.2
+// gen.ukHomeApps / .ukHomeOffers from Table 2.3 (Home applicants from UK schools/colleges only)
+// gen.pctMaintainedOffers = % of those UK-home-school offers that came from state-maintained schools (Table 2.3)
+// type: standard | mature | women
+
+const COLLEGES = [
+  { name:"Christ's",            apps:60,  offers:7,  fmApps:17,  fmOffers:4,    tmuaApp:{min:1.7,avg:4.48,max:9.0}, tmuaOffer:{min:4.3,avg:7.41,max:9.0}, type:"standard", gen:{ appsAll:774,  offersAll:156, menApps:416, womenApps:358, menOffers:80,  womenOffers:76,  ukHomeApps:412,  ukHomeOffers:98,  pctMaintainedOffers:73.5 } },
+  { name:"Churchill",           apps:37,  offers:6,  fmApps:16,  fmOffers:4,    tmuaApp:{min:2.0,avg:4.94,max:8.8}, tmuaOffer:{min:4.3,avg:5.92,max:8.4}, type:"standard", gen:{ appsAll:827,  offersAll:203, menApps:622, womenApps:205, menOffers:97,  womenOffers:106, ukHomeApps:451,  ukHomeOffers:155, pctMaintainedOffers:71.6 } },
+  { name:"Clare",               apps:93,  offers:10, fmApps:36,  fmOffers:5,    tmuaApp:{min:1.0,avg:4.64,max:9.0}, tmuaOffer:{min:4.0,avg:4.65,max:6.5}, type:"standard", gen:{ appsAll:952,  offersAll:176, menApps:392, womenApps:560, menOffers:92,  womenOffers:84,  ukHomeApps:713,  ukHomeOffers:144, pctMaintainedOffers:66.0 } },
+  { name:"Corpus Christi",      apps:38,  offers:4,  fmApps:9,   fmOffers:"<3", tmuaApp:{min:1.3,avg:4.42,max:9.0}, tmuaOffer:{min:4.0,avg:6.60,max:9.0}, type:"standard", gen:{ appsAll:535,  offersAll:122, menApps:281, womenApps:254, menOffers:60,  womenOffers:62,  ukHomeApps:366,  ukHomeOffers:101, pctMaintainedOffers:75.2 } },
+  { name:"Downing",             apps:71,  offers:5,  fmApps:22,  fmOffers:3,    tmuaApp:{min:1.3,avg:4.19,max:8.0}, tmuaOffer:{min:4.1,avg:6.52,max:8.0}, type:"standard", gen:{ appsAll:1046, offersAll:161, menApps:486, womenApps:560, menOffers:94,  womenOffers:67,  ukHomeApps:791,  ukHomeOffers:123, pctMaintainedOffers:71.5 } },
+  { name:"Emmanuel",            apps:53,  offers:5,  fmApps:13,  fmOffers:"<3", tmuaApp:{min:1.1,avg:4.51,max:7.0}, tmuaOffer:{min:4.3,avg:5.40,max:5.9}, type:"standard", gen:{ appsAll:848,  offersAll:161, menApps:432, womenApps:416, menOffers:79,  womenOffers:82,  ukHomeApps:630,  ukHomeOffers:132, pctMaintainedOffers:75.0 } },
+  { name:"Fitzwilliam",         apps:64,  offers:8,  fmApps:19,  fmOffers:6,    tmuaApp:{min:1.3,avg:5.05,max:9.0}, tmuaOffer:{min:4.7,avg:6.99,max:9.0}, type:"standard", gen:{ appsAll:696,  offersAll:181, menApps:407, womenApps:289, menOffers:96,  womenOffers:85,  ukHomeApps:422,  ukHomeOffers:141, pctMaintainedOffers:85.1 } },
+  { name:"Girton",              apps:75,  offers:10, fmApps:25,  fmOffers:6,    tmuaApp:{min:1.1,avg:4.76,max:8.4}, tmuaOffer:{min:4.0,avg:5.49,max:7.3}, type:"standard", gen:{ appsAll:621,  offersAll:182, menApps:379, womenApps:242, menOffers:82,  womenOffers:100, ukHomeApps:364,  ukHomeOffers:146, pctMaintainedOffers:74.7 } },
+  { name:"Gonville and Caius",  apps:66,  offers:9,  fmApps:20,  fmOffers:5,    tmuaApp:{min:1.1,avg:4.36,max:7.0}, tmuaOffer:{min:3.8,avg:5.50,max:7.0}, type:"standard", gen:{ appsAll:1181, offersAll:215, menApps:597, womenApps:584, menOffers:96,  womenOffers:119, ukHomeApps:949,  ukHomeOffers:191, pctMaintainedOffers:75.4 } },
+  { name:"Homerton",            apps:97,  offers:9,  fmApps:33,  fmOffers:5,    tmuaApp:{min:1.1,avg:4.78,max:9.0}, tmuaOffer:{min:3.8,avg:5.47,max:8.4}, type:"standard", gen:{ appsAll:853,  offersAll:230, menApps:473, womenApps:380, menOffers:112, womenOffers:118, ukHomeApps:440,  ukHomeOffers:171, pctMaintainedOffers:82.5 } },
+  { name:"Hughes Hall",         apps:11,  offers:6,  fmApps:null,fmOffers:null, tmuaApp:{min:3.8,avg:5.13,max:5.9}, tmuaOffer:{min:5.0,avg:5.48,max:5.9}, type:"mature",   gen:{ appsAll:321,  offersAll:89,  menApps:148, womenApps:173, menOffers:50,  womenOffers:39,  ukHomeApps:40,   ukHomeOffers:16,  pctMaintainedOffers:56.3 } },
+  { name:"Jesus",               apps:65,  offers:5,  fmApps:19,  fmOffers:3,    tmuaApp:{min:1.1,avg:3.91,max:8.9}, tmuaOffer:{min:4.3,avg:5.24,max:7.0}, type:"standard", gen:{ appsAll:883,  offersAll:164, menApps:493, womenApps:390, menOffers:84,  womenOffers:80,  ukHomeApps:706,  ukHomeOffers:136, pctMaintainedOffers:79.4 } },
+  { name:"King's",              apps:115, offers:9,  fmApps:24,  fmOffers:7,    tmuaApp:{min:1.3,avg:4.00,max:9.0}, tmuaOffer:{min:4.5,avg:5.78,max:6.5}, type:"standard", gen:{ appsAll:762,  offersAll:154, menApps:408, womenApps:354, menOffers:73,  womenOffers:81,  ukHomeApps:490,  ukHomeOffers:119, pctMaintainedOffers:82.4 } },
+  { name:"Lucy Cavendish",      apps:64,  offers:12, fmApps:17,  fmOffers:8,    tmuaApp:{min:1.0,avg:4.56,max:9.0}, tmuaOffer:{min:4.3,avg:5.80,max:7.0}, type:"mature",   gen:{ appsAll:669,  offersAll:193, menApps:307, womenApps:362, menOffers:79,  womenOffers:114, ukHomeApps:327,  ukHomeOffers:119, pctMaintainedOffers:95.0 } },
+  { name:"Magdalene",           apps:27,  offers:3,  fmApps:10,  fmOffers:0,    tmuaApp:{min:1.0,avg:4.92,max:8.0}, tmuaOffer:{min:4.8,avg:5.17,max:5.7}, type:"standard", gen:{ appsAll:550,  offersAll:133, menApps:277, womenApps:273, menOffers:72,  womenOffers:61,  ukHomeApps:269,  ukHomeOffers:88,  pctMaintainedOffers:73.9 } },
+  { name:"Murray Edwards",      apps:52,  offers:8,  fmApps:19,  fmOffers:6,    tmuaApp:{min:1.0,avg:5.01,max:7.6}, tmuaOffer:{min:4.5,avg:5.91,max:7.3}, type:"women",    gen:{ appsAll:413,  offersAll:169, menApps:0,   womenApps:413, menOffers:0,   womenOffers:169, ukHomeApps:216,  ukHomeOffers:137, pctMaintainedOffers:75.2 } },
+  { name:"Pembroke",            apps:34,  offers:3,  fmApps:11,  fmOffers:"<3", tmuaApp:{min:1.7,avg:4.46,max:9.0}, tmuaOffer:{min:5.4,avg:5.67,max:5.9}, type:"standard", gen:{ appsAll:970,  offersAll:157, menApps:465, womenApps:505, menOffers:63,  womenOffers:94,  ukHomeApps:762,  ukHomeOffers:140, pctMaintainedOffers:70.7 } },
+  { name:"Peterhouse",          apps:26,  offers:3,  fmApps:8,   fmOffers:"<3", tmuaApp:{min:1.7,avg:4.40,max:7.3}, tmuaOffer:{min:4.5,avg:5.43,max:7.3}, type:"standard", gen:{ appsAll:487,  offersAll:114, menApps:315, womenApps:172, menOffers:70,  womenOffers:44,  ukHomeApps:297,  ukHomeOffers:75,  pctMaintainedOffers:68.0 } },
+  { name:"Queens'",             apps:55,  offers:6,  fmApps:21,  fmOffers:"<3", tmuaApp:{min:1.0,avg:4.80,max:8.4}, tmuaOffer:{min:5.4,avg:6.20,max:7.3}, type:"standard", gen:{ appsAll:888,  offersAll:194, menApps:482, womenApps:406, menOffers:93,  womenOffers:101, ukHomeApps:589,  ukHomeOffers:158, pctMaintainedOffers:72.8 } },
+  { name:"Robinson",            apps:44,  offers:4,  fmApps:14,  fmOffers:"<3", tmuaApp:{min:1.7,avg:4.94,max:8.4}, tmuaOffer:{min:4.7,avg:6.13,max:8.4}, type:"standard", gen:{ appsAll:586,  offersAll:153, menApps:370, womenApps:216, menOffers:86,  womenOffers:67,  ukHomeApps:305,  ukHomeOffers:118, pctMaintainedOffers:69.5 } },
+  { name:"Selwyn",              apps:76,  offers:8,  fmApps:26,  fmOffers:5,    tmuaApp:{min:1.7,avg:4.64,max:9.0}, tmuaOffer:{min:5.0,avg:6.63,max:9.0}, type:"standard", gen:{ appsAll:839,  offersAll:155, menApps:414, womenApps:425, menOffers:83,  womenOffers:72,  ukHomeApps:627,  ukHomeOffers:129, pctMaintainedOffers:78.3 } },
+  { name:"Sidney Sussex",       apps:49,  offers:5,  fmApps:17,  fmOffers:4,    tmuaApp:{min:1.1,avg:4.90,max:8.4}, tmuaOffer:{min:5.9,avg:6.46,max:7.3}, type:"standard", gen:{ appsAll:555,  offersAll:137, menApps:287, womenApps:268, menOffers:65,  womenOffers:72,  ukHomeApps:341,  ukHomeOffers:102, pctMaintainedOffers:67.6 } },
+  { name:"St Catharine's",      apps:73,  offers:9,  fmApps:24,  fmOffers:7,    tmuaApp:{min:2.0,avg:4.61,max:7.6}, tmuaOffer:{min:4.3,avg:5.38,max:7.3}, type:"standard", gen:{ appsAll:705,  offersAll:157, menApps:336, womenApps:369, menOffers:79,  womenOffers:78,  ukHomeApps:457,  ukHomeOffers:115, pctMaintainedOffers:78.3 } },
+  { name:"St Edmund's",         apps:12,  offers:6,  fmApps:"<3",fmOffers:0,    tmuaApp:{min:3.5,avg:5.72,max:7.6}, tmuaOffer:{min:5.5,avg:6.95,max:9.0}, type:"mature",   gen:{ appsAll:289,  offersAll:81,  menApps:135, womenApps:154, menOffers:46,  womenOffers:35,  ukHomeApps:27,   ukHomeOffers:13,  pctMaintainedOffers:30.8 } },
+  { name:"St John's",           apps:111, offers:12, fmApps:43,  fmOffers:10,   tmuaApp:{min:1.7,avg:4.57,max:9.0}, tmuaOffer:{min:5.0,avg:6.79,max:9.0}, type:"standard", gen:{ appsAll:1409, offersAll:221, menApps:787, womenApps:622, menOffers:120, womenOffers:101, ukHomeApps:1039, ukHomeOffers:169, pctMaintainedOffers:66.9 } },
+  { name:"Trinity",             apps:109, offers:16, fmApps:23,  fmOffers:7,    tmuaApp:{min:1.0,avg:4.47,max:9.0}, tmuaOffer:{min:4.3,avg:6.21,max:9.0}, type:"standard", gen:{ appsAll:1612, offersAll:268, menApps:1027,womenApps:585, menOffers:169, womenOffers:99,  ukHomeApps:843,  ukHomeOffers:166, pctMaintainedOffers:54.2 } },
+  { name:"Trinity Hall",        apps:70,  offers:7,  fmApps:17,  fmOffers:6,    tmuaApp:{min:1.1,avg:4.65,max:8.1}, tmuaOffer:{min:4.1,avg:6.44,max:8.1}, type:"standard", gen:{ appsAll:602,  offersAll:135, menApps:303, womenApps:299, menOffers:70,  womenOffers:65,  ukHomeApps:375,  ukHomeOffers:106, pctMaintainedOffers:73.6 } }
+];
+
+// UK-only data, Home applicants, by Entry Year (FOI 2025/801, Sinclair, 26 Aug 2025).
+// appsByYear / offersByYear are [2023, 2024, 2025] matriculation years.
+// doff = total Direct Offers across the 3 years.
+// wpo  = total Winter Pool Offers across the 3 years.
+// Offers = doff + wpo.
+const UK3 = {
+  "Christ's":            { appsByYear:[23,26,29], offersByYear:[1,4,2],    doff:6,  wpo:1  },
+  "Churchill":           { appsByYear:[13,7,14],  offersByYear:[2,2,3],    doff:1,  wpo:6  },
+  "Clare":               { appsByYear:[28,37,56], offersByYear:[5,7,10],   doff:19, wpo:3  },
+  "Corpus Christi":      { appsByYear:[17,17,17], offersByYear:[3,3,2],    doff:4,  wpo:4  },
+  "Downing":             { appsByYear:[20,42,49], offersByYear:[4,4,3],    doff:10, wpo:1  },
+  "Emmanuel":            { appsByYear:[36,47,36], offersByYear:[4,4,4],    doff:11, wpo:1  },
+  "Fitzwilliam":         { appsByYear:[26,23,24], offersByYear:[4,4,3],    doff:7,  wpo:4  },
+  "Girton":              { appsByYear:[21,22,23], offersByYear:[6,7,6],    doff:5,  wpo:14 },
+  "Gonville and Caius":  { appsByYear:[34,46,49], offersByYear:[5,6,6],    doff:17, wpo:0  },
+  "Homerton":            { appsByYear:[13,14,34], offersByYear:[6,5,5],    doff:9,  wpo:7  },
+  "Hughes Hall":         { appsByYear:[6,3,0],    offersByYear:[1,0,0],    doff:1,  wpo:0  },
+  "Jesus":               { appsByYear:[48,33,50], offersByYear:[3,4,3],    doff:9,  wpo:1  },
+  "King's":              { appsByYear:[45,60,70], offersByYear:[9,7,9],    doff:25, wpo:0  },
+  "Lucy Cavendish":      { appsByYear:[2,20,22],  offersByYear:[3,7,5],    doff:8,  wpo:7  },
+  "Magdalene":           { appsByYear:[14,3,7],   offersByYear:[0,0,2],    doff:2,  wpo:0  },
+  "Murray Edwards":      { appsByYear:[4,4,8],    offersByYear:[2,3,5],    doff:2,  wpo:8  },
+  "Pembroke":            { appsByYear:[35,37,19], offersByYear:[3,2,2],    doff:7,  wpo:0  },
+  "Peterhouse":          { appsByYear:[8,15,12],  offersByYear:[1,2,2],    doff:5,  wpo:0  },
+  "Queens'":             { appsByYear:[29,48,31], offersByYear:[4,2,4],    doff:10, wpo:0  },
+  "Robinson":            { appsByYear:[10,18,13], offersByYear:[1,3,1],    doff:4,  wpo:1  },
+  "Selwyn":              { appsByYear:[46,63,46], offersByYear:[6,4,4],    doff:13, wpo:1  },
+  "Sidney Sussex":       { appsByYear:[20,21,18], offersByYear:[3,4,2],    doff:4,  wpo:5  },
+  "St Catharine's":      { appsByYear:[30,38,37], offersByYear:[5,5,7],    doff:17, wpo:0  },
+  "St Edmund's":         { appsByYear:[0,3,1],    offersByYear:[0,1,0],    doff:1,  wpo:0  },
+  "St John's":           { appsByYear:[36,56,74], offersByYear:[4,9,11],   doff:24, wpo:0  },
+  "Trinity":             { appsByYear:[46,71,64], offersByYear:[9,13,9],   doff:31, wpo:0  },
+  "Trinity Hall":        { appsByYear:[14,18,33], offersByYear:[3,2,3],    doff:7,  wpo:1  }
+};
+function ukTotals(c){
+  const u = UK3[c.name]; if (!u) return null;
+  const apps = u.appsByYear.reduce((s,v)=>s+v,0);
+  const offers = u.offersByYear.reduce((s,v)=>s+v,0);
+  return { apps, offers, rate: apps?offers/apps*100:0, doff:u.doff, wpo:u.wpo, appsByYear:u.appsByYear, offersByYear:u.offersByYear };
+}
+// UK aggregate uses only the standard colleges currently shown.
+const UK_AGG = (()=>{
+  let a=[0,0,0], o=[0,0,0];
+  for (const c of COLLEGES){
+    if (c.type !== "standard") continue;
+    const u = UK3[c.name]; if (!u) continue;
+    for(let i=0;i<3;i++){ a[i]+=u.appsByYear[i]; o[i]+=u.offersByYear[i]; }
+  }
+  const totalA = a.reduce((s,v)=>s+v,0);
+  const totalO = o.reduce((s,v)=>s+v,0);
+  return { apps:a, offers:o, totalApps:totalA, totalOffers:totalO,
+           rate: totalA ? totalO/totalA*100 : 0,
+           rateByYear: a.map((v,i)=>v?o[i]/v*100:0) };
+})();
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let state = {
+  filter:"all",
+  sort:"rate",
+  dir:"desc",
+  selected: "Trinity",
+  tmua: null
+};
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function fmt(n, dp=1){
+  if(n===null||n===undefined) return "—";
+  if(typeof n === "string") return n;
+  return n.toFixed(dp);
+}
+function rate(c){ return c.offers / c.apps * 100; }
+// % of offer-holders who hold an A* in Further Maths
+function fmRate(c){
+  if(c.fmOffers === null) return null;          // no FOI data (Hughes Hall)
+  if(c.fmOffers === "<3") return null;          // redacted — return null but flag separately
+  return c.fmOffers / c.offers * 100;
+}
+// % of applicants who hold an A* in Further Maths
+function fmAppPct(c){
+  if(c.fmApps === null) return null;
+  if(c.fmApps === "<3") return null;
+  return c.fmApps / c.apps * 100;
+}
+// % of offer-holders with FM A*, but treat <3 as the mid-point for charting
+function fmOfferPctApprox(c){
+  if(c.fmOffers === null) return null;
+  if(c.fmOffers === "<3") return 1.5 / c.offers * 100;
+  return c.fmOffers / c.offers * 100;
+}
+function fmAppPctApprox(c){
+  if(c.fmApps === null) return null;
+  if(c.fmApps === "<3") return 1.5 / c.apps * 100;
+  return c.fmApps / c.apps * 100;
+}
+function tmuaBar(rangeApp, rangeOffer, you){
+  // 0..9 scale -> 0..110px
+  const W = 110;
+  const x = v => (v/9)*W;
+  const appLeft = x(rangeApp.min), appRight = x(rangeApp.max);
+  const offLeft = x(rangeOffer.min), offRight = x(rangeOffer.max);
+  const appAvg = x(rangeApp.avg);
+  const offAvg = x(rangeOffer.avg);
+  const youX = you!==null && you>=1 ? x(you) : null;
+  return `<div class="tmua-bar" title="Applicants ${rangeApp.min}–${rangeApp.max} (avg ${rangeApp.avg}). Offer-holders ${rangeOffer.min}–${rangeOffer.max} (avg ${rangeOffer.avg}).">
+    <div class="scale"><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span></div>
+    <div class="range" style="left:${appLeft}px;width:${appRight-appLeft}px;top:1px;bottom:9px"></div>
+    <div class="range offer" style="left:${offLeft}px;width:${offRight-offLeft}px;top:9px;bottom:1px"></div>
+    <div class="avg" style="left:${appAvg}px;top:0;height:9px"></div>
+    <div class="avg offer" style="left:${offAvg}px;top:9px;height:9px"></div>
+    ${youX!==null ? `<div class="you" style="left:${youX}px"></div>` : ""}
+  </div>`;
+}
+
+// For now the page focuses on the standard undergraduate colleges.
+// Mature colleges (Hughes Hall, Lucy Cavendish, St Edmund's) and the
+// women-only college (Murray Edwards) are excluded from every view.
+function filteredColleges(){
+  return COLLEGES.filter(c => c.type === "standard");
+}
+function sortedColleges(){
+  const list = [...filteredColleges()];
+  const dir = state.dir==="asc"?1:-1;
+  const k = state.sort;
+  list.sort((a,b)=>{
+    let av,bv;
+    if(k==="name"){ av=a.name; bv=b.name; return av.localeCompare(bv)*dir; }
+    if(k==="apps"){ av=a.apps; bv=b.apps; }
+    else if(k==="offers"){ av=a.offers; bv=b.offers; }
+    else if(k==="rate"){ av=rate(a); bv=rate(b); }
+    else if(k==="tmuaApp"){ av=a.tmuaApp.avg; bv=b.tmuaApp.avg; }
+    else if(k==="tmuaOffer"){ av=a.tmuaOffer.avg; bv=b.tmuaOffer.avg; }
+    else if(k==="fmRate"){
+      const ar = fmRate(a), br = fmRate(b);
+      if(ar===null && br===null) return 0;
+      if(ar===null) return 1;
+      if(br===null) return -1;
+      av=ar;bv=br;
+    }
+    return (av-bv)*dir;
+  });
+  return list;
+}
+
+/* ============================================================
+   RENDER LEDGER
+   ============================================================ */
+function renderLedger(){
+  const body = document.getElementById("ledgerBody");
+  const list = sortedColleges();
+  const you = state.tmua;
+  const hint = document.getElementById("tmuaMatchHint");
+  if (you === null){ hint.innerHTML = ""; }
+  else {
+    const n = list.filter(c => you >= c.tmuaOffer.avg).length;
+    hint.innerHTML = `${n} of ${list.length} colleges<br>where you'd meet<br>the offer-holder avg`;
+  }
+  body.innerHTML = list.map(c=>{
+    const r = rate(c);
+    const rClass = r>=20 ? "high" : (r<=9 ? "low" : "");
+    let matchClass = "";
+    if (you!==null){
+      // "match" = your score is at or above the offer-holder average
+      // (i.e. you would be a competitive applicant for this college)
+      if (you >= c.tmuaOffer.avg){
+        matchClass = "match";
+      }
+    }
+    const tag = c.type==="mature" ? `<span class="tag mature">Mature</span>` :
+                c.type==="women"  ? `<span class="tag women">Women</span>` : "";
+    const fmR = fmRate(c);
+    let fmCell;
+    if (c.fmOffers === null) fmCell = "—";
+    else if (c.fmOffers === "<3") fmCell = `<span class="small">&lt;${(3/c.offers*100).toFixed(0)}%</span><br><span class="small" style="font-size:11px">&lt;3 of ${c.offers}</span>`;
+    else if (c.fmOffers === 0) fmCell = `<span style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'wght' 460;font-size:16px;color:var(--ink-faint)">0%</span><br><span class="small" style="font-size:11px">0 of ${c.offers}</span>`;
+    else fmCell = `<span style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'wght' 460;font-size:16px;color:var(--ink)">${fmR.toFixed(0)}%</span><br><span class="small" style="font-size:11px">${c.fmOffers} of ${c.offers}</span>`;
+    const selected = (c.name===state.selected) ? "selected" : "";
+    return `<tr data-name="${c.name}" class="${selected} ${matchClass}">
+      <td class="name">${c.name}${tag}</td>
+      <td>${c.apps}</td>
+      <td>${c.offers}</td>
+      <td><div class="rate-cell"><span class="v ${rClass}">${r.toFixed(1)}%</span><span class="ratio">1·in·${(c.apps/c.offers).toFixed(1)}</span></div></td>
+      <td>
+        <div class="tmua-cell">
+          <div class="mini-row"><span class="avg-val">${c.tmuaApp.avg.toFixed(2)}</span>${tmuaBar(c.tmuaApp,c.tmuaOffer,you)}</div>
+        </div>
+      </td>
+      <td>
+        <span class="avg-val offer" style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'wght' 460;font-size:16px;color:var(--oxblood)">${c.tmuaOffer.avg.toFixed(2)}</span>
+      </td>
+      <td>${fmCell}</td>
+    </tr>`;
+  }).join("");
+  // bind clicks
+  document.querySelectorAll("#ledgerBody tr").forEach(tr=>{
+    tr.addEventListener("click",()=>{
+      state.selected = tr.dataset.name;
+      renderLedger();
+      renderSpotlight();
+      renderScatter();
+      renderShift();
+      renderUK();
+    });
+  });
+}
+
+/* ============================================================
+   SPOTLIGHT
+   ============================================================ */
+function renderSpotlight(){
+  const c = COLLEGES.find(x=>x.name===state.selected);
+  if(!c) return;
+  const you = state.tmua;
+  const r = rate(c);
+  const fmR = fmRate(c);
+
+  // gender shares of OFFERS (general, all subjects)
+  const totalOffers = c.gen.menOffers + c.gen.womenOffers;
+  const pctMen = totalOffers ? (c.gen.menOffers/totalOffers*100) : 0;
+  const pctWomen = totalOffers ? (c.gen.womenOffers/totalOffers*100) : 0;
+
+  // state vs independent (of UK home offer holders from UK schools)
+  const pctMaint = c.gen.pctMaintainedOffers;
+  const pctIndep = 100 - pctMaint;
+
+  // overseas / non-UK-school estimate
+  const ukHomeAll = c.gen.ukHomeOffers;
+  const overseasIsh = Math.max(0, c.gen.offersAll - ukHomeAll);
+  const pctUKHome = c.gen.offersAll ? (ukHomeAll / c.gen.offersAll * 100) : 0;
+  const pctOverseas = 100 - pctUKHome;
+
+  const typeLabel = c.type==="mature" ? "Mature college (21+)" :
+                    c.type==="women" ? "Women only" : "Standard undergraduate college";
+
+  // TMUA big chart
+  const W = 320, H = 96, PAD = 16;
+  const x = v => PAD + (v/9)*(W-2*PAD);
+  const appBar = `<div class="range-bar app" style="left:${x(c.tmuaApp.min)}px;width:${x(c.tmuaApp.max)-x(c.tmuaApp.min)}px;top:18px"></div>`;
+  const offBar = `<div class="range-bar off" style="left:${x(c.tmuaOffer.min)}px;width:${x(c.tmuaOffer.max)-x(c.tmuaOffer.min)}px;top:60px"></div>`;
+  const appAvg = `<div class="avg-tick" style="left:${x(c.tmuaApp.avg)}px;top:14px"></div><div class="avg-label" style="left:${x(c.tmuaApp.avg)}px;top:0">${c.tmuaApp.avg.toFixed(2)}</div>`;
+  const offAvg = `<div class="avg-tick off" style="left:${x(c.tmuaOffer.avg)}px;top:52px"></div><div class="avg-label" style="left:${x(c.tmuaOffer.avg)}px;top:82px;color:var(--oxblood);font-weight:600">${c.tmuaOffer.avg.toFixed(2)}</div>`;
+  const youMark = (you!==null && you>=1) ? `<div class="you-mark" style="left:${x(you)}px;top:34px"></div><div class="you-label" style="left:${x(you)}px;top:42px">You · ${you.toFixed(1)}</div>` : "";
+  const scaleMarks = [1,3,5,7,9].map(v=>`<div class="scale-mark" style="left:${x(v)}px">${v}</div>`).join("");
+  const rowAppLbl = `<div class="row-lbl" style="left:${PAD}px;top:23px;transform:none;padding-right:0">Applicants</div>`;
+  const rowOffLbl = `<div class="row-lbl" style="left:${PAD}px;top:65px;transform:none;padding-right:0;color:var(--oxblood)">Offer-holders</div>`;
+
+  document.getElementById("spotlight").innerHTML = `
+    <div class="crown">
+      <span>A college examined</span>
+      <span>${typeLabel}</span>
+    </div>
+    <h3>${c.name}</h3>
+    <div class="sub">${c.apps} applicants · ${c.offers} offers · ${r.toFixed(1)}% offer rate · roughly <strong>one in ${(c.apps/c.offers).toFixed(1)}</strong></div>
+
+    <div class="stat-grid">
+      <div class="s"><div class="v">${c.apps}</div><div class="l">Applicants</div></div>
+      <div class="s"><div class="v oxblood">${c.offers}</div><div class="l">Offers</div></div>
+      <div class="s"><div class="v">${c.tmuaApp.avg.toFixed(2)}</div><div class="l">Avg TMUA · applicants</div></div>
+      <div class="s"><div class="v oxblood">${c.tmuaOffer.avg.toFixed(2)}</div><div class="l">Avg TMUA · offer-holders</div></div>
+    </div>
+
+    ${(()=>{ const u = ukTotals(c); if(!u) return "";
+      const dirPct = u.offers ? u.doff/u.offers*100 : 0;
+      const wpoPct = 100 - dirPct;
+      const growth = ukGrowthPct(u);
+      const growthTxt = u.appsByYear[0]===0 && u.appsByYear[2]>0 ? "new entrant" :
+                        u.appsByYear[2]===0 ? "0 apps in ’25" :
+                        `${growth>0?"+":""}${growth.toFixed(0)}%`;
+      return `
+      <div class="detail-section" style="background:rgba(111,156,143,.08);margin:18px -24px 0;padding:14px 24px 16px;border-top:1px solid var(--camblue-deep);border-bottom:1px solid var(--camblue-deep)">
+        <h4 style="color:var(--camblue-deep);border-color:rgba(59,106,96,.35)">Through UK eyes · 2023 – 25</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;align-items:end">
+          <div>
+            <div style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 96,'wght' 460;font-size:28px;line-height:1;color:var(--camblue-deep)">${u.rate.toFixed(1)}%</div>
+            <div style="margin-top:4px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif">UK offer rate · aggregate</div>
+            <div style="font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:2px">1 in ${u.apps && u.offers ? (u.apps/u.offers).toFixed(1) : "—"}</div>
+          </div>
+          <div>
+            <div style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 96,'wght' 460;font-size:28px;line-height:1">${u.apps} <span style="font-size:14px;color:var(--ink-faint)">apps</span></div>
+            <div style="margin-top:4px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif">${u.offers} UK offers · 3 yrs</div>
+            <div style="font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:2px">apps trend: ${growthTxt}</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif">Direct · Pool split</div>
+        <div style="display:flex;height:22px;margin-top:5px;border:1px solid rgba(35,27,20,.2);overflow:hidden;border-radius:2px;font-family:'Fraunces',serif;font-variation-settings:'opsz' 9,'wght' 500;font-size:11px;color:var(--paper)">
+          ${u.doff > 0 ? `<div style="background:var(--camblue-deep);width:${dirPct}%;display:flex;align-items:center;justify-content:center">${dirPct>=20?`Direct · ${u.doff}`:""}</div>` : ""}
+          ${u.wpo > 0 ? `<div style="background:var(--gold);width:${wpoPct}%;display:flex;align-items:center;justify-content:center">${wpoPct>=20?`Pool · ${u.wpo}`:""}</div>` : ""}
+          ${u.offers === 0 ? `<div style="width:100%;color:var(--ink-faint);display:flex;align-items:center;justify-content:center">no UK offers in 3 yrs</div>` : ""}
+        </div>
+        <div style="margin-top:10px;font-size:13px;color:var(--ink-soft);font-style:italic">UK apps by year · ${u.appsByYear[0]} → ${u.appsByYear[1]} → ${u.appsByYear[2]}.&nbsp;&nbsp;UK offers by year · ${u.offersByYear[0]} → ${u.offersByYear[1]} → ${u.offersByYear[2]}.</div>
+      </div>`;
+    })()}
+
+    <div class="detail-section">
+      <h4>TMUA Distribution</h4>
+      <div class="tmua-big" style="padding:0 ${PAD}px;width:${W}px;max-width:100%">
+        <div class="scale-line" style="top:23px"></div>
+        <div class="scale-line" style="top:65px"></div>
+        ${appBar}${offBar}
+        ${appAvg}${offAvg}
+        ${youMark}
+        ${rowAppLbl}${rowOffLbl}
+        ${scaleMarks}
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h4>Further Maths A* · share of applicants & offer-holders</h4>
+      ${(() => {
+        const appPct = fmAppPct(c);
+        const offPct = fmRate(c);
+        const appPctTxt = appPct===null ? (c.fmApps===null?"—":"&lt;"+(3/c.apps*100).toFixed(0)+"%") : appPct.toFixed(0)+"%";
+        const offPctTxt = c.fmOffers===null ? "—" :
+                          c.fmOffers==="<3" ? "&lt;"+(3/c.offers*100).toFixed(0)+"%" :
+                          c.fmOffers===0 ? "0%" :
+                          offPct.toFixed(0)+"%";
+        const appCount = c.fmApps===null ? "—" : `${c.fmApps} of ${c.apps}`;
+        const offCount = c.fmOffers===null ? "—" : `${c.fmOffers} of ${c.offers}`;
+        return `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px">
+          <div>
+            <div style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 96,'wght' 460;font-size:28px;line-height:1">${appPctTxt}</div>
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif;margin-top:4px">of applicants</div>
+            <div style="font-style:italic;color:var(--ink-soft);font-size:12.5px;margin-top:2px">${appCount}</div>
+          </div>
+          <div>
+            <div style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 96,'wght' 460;font-size:28px;line-height:1;color:var(--oxblood)">${offPctTxt}</div>
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif;margin-top:4px">of offer-holders</div>
+            <div style="font-style:italic;color:var(--ink-soft);font-size:12.5px;margin-top:2px">${offCount}</div>
+          </div>
+        </div>`;
+      })()}
+    </div>
+
+    <div class="detail-section">
+      <h4>College Profile <span style="font-style:italic;text-transform:none;letter-spacing:0;font-family:'EB Garamond';font-size:12px;color:var(--ink-faint)">— all-subject offers, 2024 cycle</span></h4>
+
+      <div style="margin:4px 0 6px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif">Gender of offer-holders</div>
+      ${ c.type==="women" ?
+        `<div class="dual-bar"><div class="seg women" style="width:100%">All women · ${c.gen.womenOffers}</div></div>` :
+        `<div class="dual-bar">
+          <div class="seg men" style="width:${pctMen}%">${pctMen>=10?`Men · ${pctMen.toFixed(0)}%`:""}</div>
+          <div class="seg women" style="width:${pctWomen}%">${pctWomen>=10?`Women · ${pctWomen.toFixed(0)}%`:""}</div>
+        </div>`
+      }
+
+      <div style="margin:14px 0 6px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif">School type <span style="font-style:italic;text-transform:none;letter-spacing:0;color:var(--ink-faint);font-family:'EB Garamond'">(of UK-domiciled offer-holders from UK schools)</span></div>
+      <div class="dual-bar compact">
+        <div class="seg men" style="width:${pctMaint}%;background:var(--camblue-deep)">${pctMaint>=15?`State · ${pctMaint.toFixed(0)}%`:""}</div>
+        <div class="seg women" style="width:${pctIndep}%;background:var(--gold)">${pctIndep>=15?`Independent · ${pctIndep.toFixed(0)}%`:""}</div>
+      </div>
+
+      <div style="margin:14px 0 6px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-family:'Fraunces',serif">Domicile <span style="font-style:italic;text-transform:none;letter-spacing:0;color:var(--ink-faint);font-family:'EB Garamond'">(approximate, of all offers)</span></div>
+      <div class="dual-bar compact">
+        <div class="seg men" style="width:${pctUKHome}%">${pctUKHome>=15?`UK · ${pctUKHome.toFixed(0)}%`:""}</div>
+        <div class="seg women" style="width:${pctOverseas}%;background:var(--oxblood-soft)">${pctOverseas>=15?`Overseas/Other · ${pctOverseas.toFixed(0)}%`:""}</div>
+      </div>
+    </div>
+
+    ${ c.type!=="standard" ? `<div class="footnote">${
+        c.type==="mature" ? "Mature college — admits candidates 21+ or with non-standard educational paths. Offer rates here reflect a smaller, distinct applicant pool." :
+        "Murray Edwards admits women only."
+      }</div>` : ""}
+  `;
+}
+
+/* ============================================================
+   SCATTER (offer rate × avg offer-holder TMUA)
+   ============================================================ */
+function renderScatter(){
+  const svg = document.getElementById("scatter");
+  const W=920,H=460,PL=70,PR=24,PT=30,PB=60;
+  const xMin=4, xMax=8; // avg TMUA offer-holder
+  const yMin=4, yMax=18; // offer rate % (standard colleges only)
+  const x = v => PL + (v-xMin)/(xMax-xMin)*(W-PL-PR);
+  const y = v => H-PB - (v-yMin)/(yMax-yMin)*(H-PT-PB);
+
+  const gridX = [4,5,6,7,8];
+  const gridY = [4,6,8,10,12,14,16,18];
+
+  let s = "";
+  // background
+  s += `<rect x="0" y="0" width="${W}" height="${H}" fill="rgba(0,0,0,0)"/>`;
+  // grid
+  gridX.forEach(v=>{
+    s += `<line x1="${x(v)}" y1="${PT}" x2="${x(v)}" y2="${H-PB}" stroke="rgba(35,27,20,.08)" stroke-dasharray="2 3"/>`;
+    s += `<text x="${x(v)}" y="${H-PB+22}" text-anchor="middle" font-family="Fraunces" font-size="13" fill="#6f6450" font-style="italic">${v}</text>`;
+  });
+  gridY.forEach(v=>{
+    s += `<line x1="${PL}" y1="${y(v)}" x2="${W-PR}" y2="${y(v)}" stroke="rgba(35,27,20,.08)" stroke-dasharray="2 3"/>`;
+    s += `<text x="${PL-10}" y="${y(v)+4}" text-anchor="end" font-family="Fraunces" font-size="13" fill="#6f6450" font-style="italic">${v}%</text>`;
+  });
+
+  // axes
+  s += `<line x1="${PL}" y1="${H-PB}" x2="${W-PR}" y2="${H-PB}" stroke="#1b1612" stroke-width="1.5"/>`;
+  s += `<line x1="${PL}" y1="${PT}" x2="${PL}" y2="${H-PB}" stroke="#1b1612" stroke-width="1.5"/>`;
+
+  // axis titles
+  s += `<text x="${(PL+W-PR)/2}" y="${H-12}" text-anchor="middle" font-family="Fraunces" font-size="14" fill="#1b1612" font-style="italic">Average TMUA of offer-holders →</text>`;
+  s += `<text x="${20}" y="${(PT+H-PB)/2}" text-anchor="middle" font-family="Fraunces" font-size="14" fill="#1b1612" font-style="italic" transform="rotate(-90 20 ${(PT+H-PB)/2})">Offer rate (%) →</text>`;
+
+  // subject-wide reference line (standard colleges only: 163/1508 = 10.8%)
+  s += `<line x1="${PL}" y1="${y(10.8)}" x2="${W-PR}" y2="${y(10.8)}" stroke="#1b1612" stroke-width="1" stroke-dasharray="6 4" opacity=".6"/>`;
+  s += `<text x="${W-PR-6}" y="${y(10.8)-6}" text-anchor="end" font-family="Fraunces" font-size="12" fill="#1b1612" font-style="italic">Subject-wide avg · 10.8%</text>`;
+
+  // user TMUA reference vertical line
+  if (state.tmua!==null && state.tmua>=xMin && state.tmua<=xMax){
+    s += `<line x1="${x(state.tmua)}" y1="${PT}" x2="${x(state.tmua)}" y2="${H-PB}" stroke="#3b6a60" stroke-width="2" stroke-dasharray="4 3"/>`;
+    s += `<text x="${x(state.tmua)+6}" y="${PT+14}" font-family="Fraunces" font-size="12" fill="#3b6a60" font-weight="600">Your TMUA · ${state.tmua.toFixed(1)}</text>`;
+  }
+
+  // bubbles
+  const list = filteredColleges();
+  const maxApps = Math.max(...list.map(c=>c.apps));
+  list.forEach(c=>{
+    const cx = x(c.tmuaOffer.avg);
+    const cy = y(rate(c));
+    const r = 6 + Math.sqrt(c.apps/maxApps)*22;
+    const isSelected = (c.name===state.selected);
+    const fillBubble = isSelected ? "rgba(110,25,34,.85)" : "rgba(110,25,34,.55)";
+    const strokeBubble = isSelected ? "#1b1612" : "rgba(110,25,34,.85)";
+    s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fillBubble}" stroke="${strokeBubble}" stroke-width="${isSelected?2.5:1}" data-name="${c.name}" style="cursor:pointer">
+      <title>${c.name} · ${c.apps} apps · ${c.offers} offers · rate ${rate(c).toFixed(1)}% · avg TMUA(offer) ${c.tmuaOffer.avg.toFixed(2)}</title>
+    </circle>`;
+    // labels — only show for selected, mature, or top/bottom 5 rate
+    const sortedByRate = [...list].sort((a,b)=>rate(b)-rate(a));
+    const topRates = sortedByRate.slice(0,4).map(x=>x.name);
+    const bottomRates = sortedByRate.slice(-4).map(x=>x.name);
+    if (isSelected || topRates.includes(c.name) || bottomRates.includes(c.name) || c.type==="mature"){
+      const ly = cy - r - 6;
+      s += `<text x="${cx}" y="${ly}" text-anchor="middle" font-family="Fraunces" font-size="12" font-style="italic" fill="${isSelected?'#1b1612':'#3b3328'}" font-weight="${isSelected?'600':'400'}" pointer-events="none">${c.name}</text>`;
+    }
+  });
+
+  svg.innerHTML = s;
+
+  svg.querySelectorAll("circle[data-name]").forEach(node=>{
+    node.addEventListener("click",()=>{
+      state.selected = node.dataset.name;
+      renderLedger();
+      renderSpotlight();
+      renderScatter();
+      renderShift();
+      renderUK();
+      // scroll spotlight into view on mobile
+      if (window.innerWidth < 1100) document.getElementById("spotlight").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+}
+
+/* ============================================================
+   UK SECTION
+   ============================================================ */
+state.uksort = "rate";
+
+function ukGrowthPct(u){
+  const a0 = u.appsByYear[0], a2 = u.appsByYear[2];
+  if (a0 === 0) return a2 > 0 ? Infinity : 0;
+  return (a2 - a0) / a0 * 100;
+}
+function sparklineSVG(values, color){
+  const W=78, H=24, PAD=3;
+  const min = 0, max = Math.max(...values, 1);
+  const x = i => PAD + (i/2)*(W-2*PAD);
+  const y = v => H-PAD - (v-min)/(max-min)*(H-2*PAD);
+  const pts = values.map((v,i)=>`${x(i)},${y(v)}`).join(" ");
+  const dots = values.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="2" fill="${color}"/>`).join("");
+  return `<svg class="sparkline" viewBox="0 0 ${W} ${H}">
+    <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.6"/>
+    ${dots}
+  </svg>`;
+}
+
+function renderUK(){
+  const body = document.getElementById("ukBody");
+  const list = COLLEGES.filter(c => c.type === "standard").map(c => {
+    const u = ukTotals(c);
+    return { c, u, growth: ukGrowthPct(u),
+             poolPct: u.offers ? u.wpo/u.offers*100 : 0,
+             allRate2025: c.offers/c.apps*100,
+             rateDelta: (u.rate) - (c.offers/c.apps*100) };
+  });
+
+  const dir = -1; // desc by default for most metrics
+  list.sort((a,b)=>{
+    if (state.uksort === "name") return a.c.name.localeCompare(b.c.name);
+    if (state.uksort === "rate") return (b.u.rate - a.u.rate);
+    if (state.uksort === "apps") return (b.u.apps - a.u.apps);
+    if (state.uksort === "growth") return (b.growth - a.growth);
+    if (state.uksort === "pool") return (b.poolPct - a.poolPct);
+    return 0;
+  });
+
+  body.innerHTML = list.map(({c,u,growth,poolPct,allRate2025,rateDelta}) => {
+    const selected = c.name===state.selected ? "selected" : "";
+    const rateClass = u.rate >= 25 ? "high" : (u.rate <= 8 ? "low" : "");
+    const trendClass = growth >= 25 ? "up" : (growth <= -15 ? "down" : "flat");
+    const trendSymbol = growth >= 25 ? "▲" : (growth <= -15 ? "▼" : "→");
+    const trendText = u.appsByYear[0]===0 && u.appsByYear[2]>0 ? "new entrant" :
+                      u.appsByYear[2]===0 ? "0 apps in ’25" :
+                      `${growth>0?"+":""}${growth.toFixed(0)}%`;
+    const dirPct = u.offers ? u.doff/u.offers*100 : 0;
+    const wpoPct = 100 - dirPct;
+    const deltaClass = rateDelta >= 2 ? "up" : (rateDelta <= -2 ? "down" : "flat");
+    const deltaSign = rateDelta > 0 ? "+" : "";
+    return `<tr data-name="${c.name}" class="${selected}">
+      <td class="name">${c.name}</td>
+      <td>
+        <div class="apps-cell">
+          <span class="nums">${u.appsByYear[0]}·${u.appsByYear[1]}·${u.appsByYear[2]}</span>
+          ${sparklineSVG(u.appsByYear, "var(--camblue-deep)")}
+          <span class="total">${u.apps}</span>
+        </div>
+      </td>
+      <td><span class="trend-pill ${trendClass}">${trendSymbol} ${trendText}</span></td>
+      <td><span style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'wght' 460;font-size:18px">${u.offers}</span></td>
+      <td>
+        <div class="dp-cell">
+          <div class="dp-bar" title="Direct: ${u.doff} · Pool: ${u.wpo}">
+            ${u.doff > 0 ? `<div class="seg direct" style="width:${dirPct}%">${dirPct>=20?u.doff:""}</div>` : ""}
+            ${u.wpo > 0 ? `<div class="seg pool" style="width:${wpoPct}%">${wpoPct>=20?u.wpo:""}</div>` : ""}
+            ${u.offers === 0 ? `<div class="seg empty" style="width:100%;justify-content:center">no offers</div>` : ""}
+          </div>
+          <div class="mini">${u.doff} direct · ${u.wpo} pool</div>
+        </div>
+      </td>
+      <td>
+        <div style="display:flex;flex-direction:column;align-items:flex-end">
+          <span class="uk-rate ${rateClass}">${u.rate.toFixed(1)}%</span>
+          <span class="uk-rate-sub">1·in·${u.apps && u.offers ? (u.apps/u.offers).toFixed(1) : "—"}</span>
+        </div>
+      </td>
+      <td>
+        <span class="delta ${deltaClass}">${deltaSign}${rateDelta.toFixed(1)} pp</span>
+        <div class="uk-rate-sub">all dom. ’25: ${allRate2025.toFixed(1)}%</div>
+      </td>
+    </tr>`;
+  }).join("");
+
+  // Row click → set selected
+  body.querySelectorAll("tr").forEach(tr => {
+    tr.addEventListener("click", () => {
+      state.selected = tr.dataset.name;
+      renderLedger();
+      renderSpotlight();
+      renderScatter();
+      renderShift();
+      renderUK();
+      renderUK();
+    });
+  });
+}
+
+/* ============================================================
+   SHIFT CHART (applicants → offer-holders, TMUA × FM A%)
+   ============================================================ */
+function renderShift(){
+  const svg = document.getElementById("shift");
+  const W=920,H=560,PL=70,PR=30,PT=30,PB=70;
+  const xMin=3, xMax=8;   // TMUA average
+  const yMin=0, yMax=100; // FM A* %
+  const x = v => PL + (v-xMin)/(xMax-xMin)*(W-PL-PR);
+  const y = v => H-PB - (v-yMin)/(yMax-yMin)*(H-PT-PB);
+
+  const gridX=[3,4,5,6,7,8];
+  const gridY=[0,20,40,60,80,100];
+
+  let s="";
+  // grid + axes
+  gridX.forEach(v=>{
+    s+=`<line x1="${x(v)}" y1="${PT}" x2="${x(v)}" y2="${H-PB}" stroke="rgba(35,27,20,.08)" stroke-dasharray="2 3"/>`;
+    s+=`<text x="${x(v)}" y="${H-PB+22}" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#6f6450">${v}</text>`;
+  });
+  gridY.forEach(v=>{
+    s+=`<line x1="${PL}" y1="${y(v)}" x2="${W-PR}" y2="${y(v)}" stroke="rgba(35,27,20,.08)" stroke-dasharray="2 3"/>`;
+    s+=`<text x="${PL-10}" y="${y(v)+4}" text-anchor="end" font-family="Fraunces" font-size="13" font-style="italic" fill="#6f6450">${v}%</text>`;
+  });
+  s+=`<line x1="${PL}" y1="${H-PB}" x2="${W-PR}" y2="${H-PB}" stroke="#1b1612" stroke-width="1.5"/>`;
+  s+=`<line x1="${PL}" y1="${PT}" x2="${PL}" y2="${H-PB}" stroke="#1b1612" stroke-width="1.5"/>`;
+  s+=`<text x="${(PL+W-PR)/2}" y="${H-22}" text-anchor="middle" font-family="Fraunces" font-size="14" font-style="italic" fill="#1b1612">Average TMUA →</text>`;
+  s+=`<text x="20" y="${(PT+H-PB)/2}" text-anchor="middle" font-family="Fraunces" font-size="14" font-style="italic" fill="#1b1612" transform="rotate(-90 20 ${(PT+H-PB)/2})">% with A* in Further Maths →</text>`;
+
+  // arrow marker defs
+  s+=`<defs>
+    <marker id="ahead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="rgba(110,25,34,.85)"/>
+    </marker>
+    <marker id="ahead-sel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1b1612"/>
+    </marker>
+    <marker id="ahead-faint" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="rgba(110,25,34,.4)"/>
+    </marker>
+  </defs>`;
+
+  const list = filteredColleges();
+
+  // pass 1: arrows
+  list.forEach(c=>{
+    const ax = c.tmuaApp.avg, ay = fmAppPctApprox(c);
+    const bx = c.tmuaOffer.avg, by = fmOfferPctApprox(c);
+    if (ay===null || by===null) return; // Hughes Hall - no FM data
+    const isSel = (c.name===state.selected);
+    const isRedacted = (c.fmOffers==="<3") || (c.fmApps==="<3");
+    const marker = isSel ? "url(#ahead-sel)" : (isRedacted ? "url(#ahead-faint)" : "url(#ahead)");
+    const stroke = isSel ? "#1b1612" : (isRedacted ? "rgba(110,25,34,.4)" : "rgba(110,25,34,.55)");
+    const dash = isRedacted ? '4 3' : '';
+    const sw = isSel ? 2.5 : 1.5;
+    s += `<line x1="${x(ax)}" y1="${y(ay)}" x2="${x(bx)}" y2="${y(by)}" stroke="${stroke}" stroke-width="${sw}" ${dash?`stroke-dasharray="${dash}"`:''} marker-end="${marker}" />`;
+    // base dot
+    s += `<circle cx="${x(ax)}" cy="${y(ay)}" r="${isSel?5:3.5}" fill="rgba(35,27,20,.10)" stroke="${isSel?'#1b1612':'rgba(35,27,20,.5)'}" stroke-width="1"/>`;
+  });
+
+  // pass 2: labels for selected / extremes / mature / women
+  // pick: selected, mature, women, top FM-offer %, biggest TMUA shift
+  const shiftMag = c => {
+    const ay = fmAppPctApprox(c), by = fmOfferPctApprox(c);
+    if (ay===null||by===null) return 0;
+    const dx = (c.tmuaOffer.avg-c.tmuaApp.avg)/(xMax-xMin);
+    const dy = (by-ay)/(yMax-yMin);
+    return Math.sqrt(dx*dx+dy*dy);
+  };
+  const ranked = [...list].filter(c=>fmOfferPctApprox(c)!==null);
+  const topShift = [...ranked].sort((a,b)=>shiftMag(b)-shiftMag(a)).slice(0,5).map(c=>c.name);
+  const topYpos = [...ranked].sort((a,b)=>fmOfferPctApprox(b)-fmOfferPctApprox(a)).slice(0,4).map(c=>c.name);
+  const labelled = new Set([
+    ...topShift, ...topYpos,
+    state.selected,
+    ...list.filter(c=>c.type==="mature"||c.type==="women").map(c=>c.name)
+  ]);
+
+  list.forEach(c=>{
+    if (!labelled.has(c.name)) return;
+    const bx = c.tmuaOffer.avg, by = fmOfferPctApprox(c);
+    if (by===null) return;
+    const isSel = (c.name===state.selected);
+    s += `<text x="${x(bx)+8}" y="${y(by)-6}" font-family="Fraunces" font-size="${isSel?13:11.5}" font-style="italic" fill="${isSel?'#1b1612':'#3b3328'}" font-weight="${isSel?'600':'400'}" pointer-events="none">${c.name}</text>`;
+  });
+
+  // Hughes Hall note (no FM data)
+  const hh = list.find(c=>c.name==="Hughes Hall");
+  if (hh){
+    s += `<text x="${W-PR-10}" y="${PT+18}" text-anchor="end" font-family="Fraunces" font-size="11.5" font-style="italic" fill="#6f6450">Hughes Hall omitted — no Further Maths data in the FOI release.</text>`;
+  }
+
+  svg.innerHTML = s;
+}
+
+/* ============================================================
+   INTERACTIONS
+   ============================================================ */
+function setupSort(){
+  document.querySelectorAll("#ledgerTbl thead th").forEach(th=>{
+    th.addEventListener("click",()=>{
+      const k = th.dataset.sort;
+      if(state.sort === k){
+        state.dir = (state.dir==="asc"?"desc":"asc");
+      } else {
+        state.sort = k;
+        state.dir = (k==="name")?"asc":"desc";
+      }
+      // update header visuals
+      document.querySelectorAll("#ledgerTbl thead th").forEach(t=>{
+        t.classList.remove("sorted");
+        t.querySelector(".sort-ind").textContent = "";
+      });
+      th.classList.add("sorted");
+      th.querySelector(".sort-ind").textContent = (state.dir==="asc"?"▲":"▼");
+      renderLedger();
+    });
+  });
+}
+
+function setupFilters(){
+  document.querySelectorAll(".chip[data-filter]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll(".chip[data-filter]").forEach(b=>b.classList.remove("on"));
+      btn.classList.add("on");
+      state.filter = btn.dataset.filter;
+      renderLedger();
+      renderScatter();
+      renderShift();
+    });
+  });
+}
+
+function setupUkSort(){
+  document.querySelectorAll(".chip[data-uksort]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll(".chip[data-uksort]").forEach(b=>b.classList.remove("on"));
+      btn.classList.add("on");
+      state.uksort = btn.dataset.uksort;
+      renderUK();
+    });
+  });
+}
+
+function setupTMUA(){
+  const slider = document.getElementById("tmuaScore");
+  const val = document.getElementById("tmuaVal");
+  const clear = document.getElementById("tmuaClear");
+  slider.addEventListener("input",()=>{
+    const v = parseFloat(slider.value);
+    if(v < 1){
+      state.tmua = null;
+      val.textContent = "—";
+    } else {
+      state.tmua = v;
+      val.textContent = v.toFixed(1);
+    }
+    renderLedger();
+    renderSpotlight();
+    renderScatter();
+  });
+  clear.addEventListener("click",()=>{
+    slider.value = 0;
+    state.tmua = null;
+    val.textContent = "—";
+    renderLedger();
+    renderSpotlight();
+    renderScatter();
+  });
+}
+
+function init(){
+  setupSort();
+  setupFilters();
+  setupUkSort();
+  setupTMUA();
+  renderLedger();
+  renderSpotlight();
+  renderScatter();
+  renderShift();
+  renderUK();
+}
+init();
+</script>
+</body>
+</html>
