@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Cambridge Economics Lectures — Marshall, Stone, Keynes, Meade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3ecdc;
+  --paper-2:#ede4cf;
+  --paper-3:#e6dcc4;
+  --ink:#1b1612;
+  --ink-soft:#3b3328;
+  --ink-faint:#6f6450;
+  --rule:#231b14;
+  --oxblood:#6e1922;
+  --oxblood-soft:#8a2c33;
+  --camblue:#6f9c8f;
+  --camblue-deep:#3b6a60;
+  --gold:#b08236;
+  --highlight:#f8e9b4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);}
+body{
+  font-family:"EB Garamond","Iowan Old Style",Georgia,serif;
+  font-size:17px;line-height:1.5;
+  font-feature-settings:"liga","onum";
+  background:
+    radial-gradient(ellipse 90% 60% at 20% 0%, rgba(176,130,54,.10), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 100% 100%, rgba(110,25,34,.06), transparent 60%),
+    var(--paper);
+  min-height:100vh;background-attachment:fixed;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;opacity:.7;
+}
+.wrap{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:42px 36px 90px;}
+
+/* MASTHEAD */
+.masthead{
+  border-top:7px double var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:14px 0 22px;margin-bottom:32px;
+}
+.dateline{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);
+  padding-bottom:6px;border-bottom:1px solid var(--ink-faint);margin-bottom:18px;
+}
+.dateline a{color:var(--oxblood);text-decoration:none;letter-spacing:.18em;border-bottom:1px solid transparent}
+.dateline a:hover{border-bottom-color:var(--oxblood)}
+.dateline em{font-style:italic;color:var(--oxblood);font-weight:600;letter-spacing:.18em}
+h1.title{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 144,"wght" 480,"SOFT" 50;
+  font-size:clamp(40px, 6.6vw, 92px);line-height:.94;letter-spacing:-.02em;
+  margin:0 0 6px;text-align:center;
+}
+h1.title em{font-style:italic;font-variation-settings:"opsz" 144,"wght" 360,"SOFT" 100;color:var(--oxblood)}
+.strap{
+  text-align:center;font-family:"EB Garamond",serif;font-style:italic;
+  font-size:19px;color:var(--ink-soft);margin:8px 0 0;
+}
+.strap .pip{display:inline-block;width:5px;height:5px;background:var(--oxblood);transform:rotate(45deg);margin:0 12px 3px;vertical-align:middle}
+
+/* Intro */
+.intro{
+  display:grid;grid-template-columns:1fr 2.2fr;gap:36px;
+  padding:0 0 32px;border-bottom:1px solid var(--ink-faint);margin-bottom:40px;
+}
+.intro h2{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 460;
+  font-style:italic;font-size:30px;line-height:1.05;margin:0;
+}
+.intro h2 .ornament{color:var(--oxblood);font-style:normal;margin-right:6px}
+.intro p{margin:0 0 12px;font-size:17.5px}
+.intro p:first-of-type::first-letter{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 144,"wght" 500;
+  float:left;font-size:62px;line-height:.85;padding:6px 8px 0 0;color:var(--oxblood);
+}
+.intro blockquote{
+  margin:18px 0 18px 0;padding:0 0 0 20px;border-left:3px solid var(--oxblood);
+  font-style:italic;color:var(--ink-soft);font-size:17px;
+}
+.intro blockquote cite{display:block;margin-top:6px;font-size:13px;color:var(--ink-faint);letter-spacing:.04em;font-style:normal}
+
+/* Series jump nav */
+.jump{
+  display:flex;flex-wrap:wrap;gap:10px;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  margin:0 0 32px;padding:14px 16px;
+  background:var(--paper-2);border:1px solid var(--ink-faint);
+}
+.jump .label{color:var(--ink-faint);margin-right:6px}
+.jump a{
+  padding:5px 12px;border:1px solid var(--ink-faint);border-radius:999px;
+  text-decoration:none;color:var(--ink-soft);transition:all .15s;
+}
+.jump a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* Series section */
+.series{margin:0 0 64px}
+.series-head{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:30px;
+  border-top:7px double var(--rule);border-bottom:1px solid var(--rule);
+  padding:20px 0 22px;margin-bottom:30px;
+}
+.series-head h2{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 144,"wght" 440;
+  font-size:clamp(34px, 4.4vw, 56px);line-height:1;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.series-head h2 em{font-style:italic;font-variation-settings:"opsz" 144,"wght" 340}
+.series-head .since{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);
+  margin-top:6px;
+}
+.series-head .blurb{
+  font-family:"EB Garamond",serif;font-size:16.5px;line-height:1.55;color:var(--ink-soft);
+}
+.series-head .blurb a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.series-head .blurb p{margin:0 0 10px}
+.series-head .blurb p:last-child{margin-bottom:0}
+.series-head .blurb .links{
+  display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;
+}
+.series-head .blurb .links a{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;color:var(--paper);background:var(--accent);
+  padding:6px 13px;border-radius:999px;transition:filter .15s;
+}
+.series-head .blurb .links a:hover{filter:brightness(0.85)}
+
+/* Lecture cards grid */
+.lectures{
+  display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:22px 24px;
+}
+.lecture-card{
+  background:var(--paper-2);
+  border:1px solid var(--ink-faint);
+  display:flex;flex-direction:column;
+  transition:box-shadow .15s, transform .15s;
+}
+.lecture-card:hover{box-shadow:0 6px 20px rgba(40,30,16,.10);transform:translateY(-2px)}
+.lecture-card.featured{
+  grid-column:span 2;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, var(--paper-2)), var(--paper-2));
+  border-color:var(--accent);
+}
+.thumb-wrap{position:relative;cursor:pointer;background:#1b1612;aspect-ratio:16/9;overflow:hidden}
+.thumb-wrap img{display:block;width:100%;height:100%;object-fit:cover;opacity:.92;transition:opacity .2s, transform .4s}
+.thumb-wrap:hover img{opacity:1;transform:scale(1.02)}
+.thumb-wrap .play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(255,255,255,.92);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 500;
+  box-shadow:0 4px 14px rgba(0,0,0,.4);transition:all .15s;
+  border:2px solid rgba(255,255,255,.7);
+}
+.thumb-wrap:hover .play{background:var(--accent);color:var(--paper);transform:translate(-50%,-50%) scale(1.06);border-color:transparent}
+.thumb-wrap .play::before{content:"▶";margin-left:4px}
+.thumb-wrap .duration{
+  position:absolute;right:8px;bottom:8px;
+  background:rgba(0,0,0,.75);color:#fff;
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 7px;border-radius:2px;
+}
+.thumb-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.lecture-meta{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.lecture-meta .year{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+}
+.lecture-meta .speaker{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 24,"wght" 460;
+  font-size:18px;color:var(--ink);line-height:1.15;
+}
+.lecture-meta .speaker .aff{
+  font-style:italic;font-variation-settings:"wght" 380;color:var(--ink-faint);
+  font-size:14px;display:block;margin-top:1px;
+}
+.lecture-meta .title{
+  font-family:"EB Garamond",serif;font-style:italic;
+  font-size:15.5px;color:var(--ink-soft);line-height:1.35;margin-top:2px;
+}
+.lecture-meta .extras{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;
+}
+.lecture-meta .extras a, .lecture-meta .extras button{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;color:var(--ink-soft);
+  border:1px solid var(--ink-faint);background:transparent;
+  padding:4px 9px;border-radius:999px;cursor:pointer;transition:all .12s;
+}
+.lecture-meta .extras a:hover, .lecture-meta .extras button:hover{
+  background:var(--ink);color:var(--paper);border-color:var(--ink);
+}
+
+/* No-video placeholder */
+.no-video{
+  aspect-ratio:16/9;background:repeating-linear-gradient(45deg,var(--paper-3),var(--paper-3) 10px,var(--paper-2) 10px,var(--paper-2) 20px);
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--ink-faint);
+  border-bottom:1px solid var(--ink-faint);text-align:center;padding:0 20px;
+}
+
+/* Watch-first callout */
+.callout{
+  background:var(--paper-2);border-left:4px solid var(--accent);
+  padding:14px 18px;margin:0 0 26px;
+  font-family:"EB Garamond",serif;font-size:15.5px;color:var(--ink-soft);
+  display:flex;align-items:center;gap:18px;
+}
+.callout strong{color:var(--ink);font-weight:600}
+.callout .label{
+  font-family:"Fraunces",serif;font-variation-settings:"opsz" 9,"wght" 500;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  white-space:nowrap;
+}
+
+/* Accent themes per series */
+.series.marshall { --accent: var(--oxblood); }
+.series.stone    { --accent: var(--camblue-deep); }
+.series.keynes   { --accent: var(--gold); }
+.series.meade    { --accent: #4a3b2e; }
+
+/* Footer */
+footer{
+  margin-top:64px;padding-top:24px;border-top:7px double var(--rule);
+  font-family:"EB Garamond",serif;font-style:italic;color:var(--ink-faint);font-size:14.5px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+footer p{margin:0 0 8px}
+footer strong{font-style:normal;color:var(--ink-soft);font-weight:500}
+footer a{color:var(--ink-soft)}
+
+@media(max-width:900px){
+  .wrap{padding:24px 16px 60px}
+  .intro{grid-template-columns:1fr}
+  .series-head{grid-template-columns:1fr;gap:14px}
+  .lecture-card.featured{grid-column:span 1}
+  footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="dateline">
+    <a href="../">← Reading Economics at Cambridge</a>
+    <span><em>Compiled for Joe</em></span>
+    <span>Anno MMXXVI</span>
+  </div>
+  <h1 class="title">The Cambridge<br><em>Economics Lectures</em></h1>
+  <p class="strap">Marshall <span class="pip"></span> Stone <span class="pip"></span> Keynes <span class="pip"></span> Meade</p>
+</header>
+
+<section class="intro">
+  <h2><span class="ornament">¶</span>Where to<br><em>begin</em></h2>
+  <div>
+    <p>Clare College's admissions guidance is direct: watch the public lectures hosted by the Faculty of Economics.</p>
+    <blockquote>
+      A great place to start is by watching public lectures by influential economists. The Marshall, Keynes, Meade, and Stone lectures hosted at Cambridge offer not only historical perspective but also a glimpse into how economic thinking continues to evolve. Many of these are available online.
+      <cite>— Clare College, advice to Economics applicants</cite>
+    </blockquote>
+    <p>What follows is a catalogue of those four series. Almost every lecture from the last decade has been filmed and posted to the Faculty's YouTube channel. Click any thumbnail to play the lecture in place — no need to leave the page. Each section also has a link to the Faculty's official archive, where lectures from earlier than this catalogue can be found.</p>
+    <p>A practical note: the <em>Marshall</em> and <em>Keynes</em> lectures are pitched at a general audience and need no prior university-level economics. The <em>Stone</em> and <em>Meade</em> lectures lean closer to research talks. If you've not watched any before, start with a Marshall — Piketty (2017) or Chetty (2015) are excellent introductions.</p>
+  </div>
+</section>
+
+<nav class="jump" aria-label="Jump to series">
+  <span class="label">Jump to</span>
+  <a href="#marshall">Marshall</a>
+  <a href="#stone">Stone</a>
+  <a href="#keynes">Keynes</a>
+  <a href="#meade">Meade</a>
+</nav>
+
+<!-- MARSHALL -->
+<section class="series marshall" id="marshall">
+  <div class="series-head">
+    <div>
+      <h2>The <em>Marshall</em> Lectures</h2>
+      <div class="since">Established 1932 · Annual · Two consecutive evenings</div>
+    </div>
+    <div class="blurb">
+      <p>The Faculty's flagship annual series, in memory of Alfred Marshall — founder of Cambridge economics and the man who put supply and demand curves into textbooks. Each lecturer gives two consecutive evenings, often with a Q&amp;A. The line-up reads like a roll call of recent Nobel laureates and front-rank economists.</p>
+      <div class="links">
+        <a href="https://www.econ.cam.ac.uk/lectures/marshall" target="_blank" rel="noopener">Official archive →</a>
+        <a href="https://www.youtube.com/playlist?list=PLudnvJrRHL1e9oC_3An43tVVJclkBK42V" target="_blank" rel="noopener">YouTube playlist →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Watch first</span>
+    <span>If you watch only one, make it <strong>Raj Chetty (2015)</strong> on equality of opportunity, or <strong>Thomas Piketty (2017)</strong> on inequality and capital — both accessible, both consequential.</span>
+  </div>
+
+  <div class="lectures" id="marshall-lectures"></div>
+</section>
+
+<!-- STONE -->
+<section class="series stone" id="stone">
+  <div class="series-head">
+    <div>
+      <h2>The <em>Stone</em> Lectures</h2>
+      <div class="since">Established 2009 · Annual · Single evening</div>
+    </div>
+    <div class="blurb">
+      <p>Honouring Sir Richard Stone (1913–1991), the Cambridge economist whose work on national income accounting won him the 1984 Nobel Prize. The lectures tend toward applied empirical work — labour, development, education, firms, AI — drawing speakers who often present a recent paper rather than a sweeping retrospective.</p>
+      <div class="links">
+        <a href="https://www.econ.cam.ac.uk/lectures/stone" target="_blank" rel="noopener">Official archive →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Watch first</span>
+    <span><strong>David Autor (2025)</strong> on AI and the future of expertise is fresh and topical; <strong>Angus Deaton (2010)</strong> on measuring global development is a beautifully clear introduction to development economics.</span>
+  </div>
+
+  <div class="lectures" id="stone-lectures"></div>
+</section>
+
+<!-- KEYNES -->
+<section class="series keynes" id="keynes">
+  <div class="series-head">
+    <div>
+      <h2>The <em>Keynes</em> Lectures</h2>
+      <div class="since">Established 2018 · Annual · Single evening</div>
+    </div>
+    <div class="blurb">
+      <p>Cambridge's newest of the four series, run jointly with the Keynes Fund and inaugurated in 2018 by Jean Tirole. Each lecturer is paired with a shorter companion interview, which is a friendlier way in if a 90-minute talk feels daunting. Note: the British Academy also runs a "Keynes Lecture in Economics" — a separate London-based series — see the footnote below.</p>
+      <div class="links">
+        <a href="https://www.econ.cam.ac.uk/lectures/keynes" target="_blank" rel="noopener">Official archive →</a>
+        <a href="https://www.youtube.com/playlist?list=PLudnvJrRHL1cFsMZ87B-_OYRIipWaU60c" target="_blank" rel="noopener">YouTube playlist →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Watch first</span>
+    <span><strong>Jean Tirole (2018)</strong> on the moral limits of markets, the inaugural lecture — or pair <strong>Hélène Rey (2022)</strong>'s "Is this Time Different?" with her short interview for a quick crash course in financial crises.</span>
+  </div>
+
+  <div class="lectures" id="keynes-lectures"></div>
+</section>
+
+<!-- MEADE -->
+<section class="series meade" id="meade">
+  <div class="series-head">
+    <div>
+      <h2>The <em>Meade</em> Lectures</h2>
+      <div class="since">Established 2017 · Biennial · Held at Christ's College</div>
+    </div>
+    <div class="blurb">
+      <p>Jointly established by Christ's College and the Faculty of Economics in 2017, honouring James Meade (1907–1995, Nobel 1977). The smallest of the four series — biennial in practice, with only four lectures so far. Tone is closer to a research lecture than a public talk, but each has been a major statement by a distinguished economist.</p>
+      <div class="links">
+        <a href="https://www.econ.cam.ac.uk/lectures/meade" target="_blank" rel="noopener">Official archive →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Watch first</span>
+    <span><strong>Dani Rodrik's (2017) inaugural</strong> on whether the era of growth miracles is over — a clear, opinionated tour of decades of development economics in 60 minutes.</span>
+  </div>
+
+  <div class="lectures" id="meade-lectures"></div>
+</section>
+
+<footer>
+  <div>
+    <p><strong>Source</strong></p>
+    <p>All four series are hosted by the <a href="https://www.econ.cam.ac.uk/" target="_blank" rel="noopener">Cambridge Faculty of Economics</a>. Videos live on the Faculty's official <a href="https://www.youtube.com/@facultyofeconomics" target="_blank" rel="noopener">YouTube channel</a>; lecture detail pages live under <code>econ.cam.ac.uk/lectures/</code>. The list above was verified on 12 May 2026.</p>
+  </div>
+  <div>
+    <p><strong>A different Keynes</strong></p>
+    <p>The <a href="https://www.thebritishacademy.ac.uk/events/lectures/listings/keynes-lectures-economics/" target="_blank" rel="noopener">British Academy Keynes Lecture in Economics</a> is a separate national series, held in London since 1971. Cambridge alumni (Angus Deaton, James Mirrlees, Mervyn King) have given it. Worth knowing about, but distinct from the Cambridge series above.</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+// kind: "marshall" / "stone" / "keynes" / "meade"
+// Each lecture has at least one of: day1, day2, video (single), interview, intro
+// missing means no video available
+
+const LECTURES = {
+  marshall: [
+    { year:"2025/26", speaker:"Philippe Aghion",    aff:"Collège de France & INSEAD",  title:"Rethinking Capitalism: The Power of Creative Destruction", day1:"Slvb82VGX7s", day2:"MrOnr2q18Q8", interview:"z6rAYup4hGA" },
+    { year:"2024/25", speaker:"James Poterba",      aff:"MIT",                          title:"Retirement Security in an Aging Population",               day1:"I2lYZXGnHFk", day2:"HPZQKM8rlRY" },
+    { year:"2023/24", speaker:"Charles F. Manski",  aff:"Northwestern",                 title:"Credible Social Planning under Uncertainty",               day1:"_3scjpR95Uc", day2:"GK5DC--qmAs" },
+    { year:"2022/23", speaker:"John Moore",         aff:"Edinburgh & LSE",              title:"Funding Horizons",                                          day1:"FqnhaXrGsUc", day2:"JsqdVr5GTtk" },
+    { year:"2021/22", speaker:"Ariel Rubinstein",   aff:"Tel Aviv",                     title:"Economics without prices and without games",                day1:"VzJfibsF88Q", day2:"Vx9ICNkKm9c" },
+    { year:"2019/20", speaker:"Paul Milgrom",       aff:"Stanford",                     title:"Market Design When Resource Allocation is NP-Hard",         day1:"a0FhGXxY3mE", day2:"U3uumi2EL2A" },
+    { year:"2018/19", speaker:"Robert Shiller",     aff:"Yale",                         title:"Economic Narratives: How Bimetallism and Bitcoin Went Viral", day1:"zam4eVCGwzA", day2:"1re9PNP1wX0" },
+    { year:"2017/18", speaker:"Caroline Hoxby",     aff:"Stanford",                     title:"Taking Productivity in Education Seriously",                day1:"_nIUj01W2_U", day2:"GZY-Yrp745A" },
+    { year:"2016/17", speaker:"Thomas Piketty",     aff:"Paris School of Economics",    title:"Reflections about inequality and capital in the 21st century", day1:"qUVBhSHk83I", day2:"ZhPfCbaY_wI" },
+    { year:"2015/16", speaker:"Raghuram Rajan",     aff:"Chicago Booth / RBI",          title:"Why have banks? Banks, Policy Intervention and Crises",     day1:"UBIDoGqXGpk", day2:"gbkDHQ8PwzA", interview:"SW0NXaysLK4" },
+    { year:"2014/15", speaker:"Raj Chetty",         aff:"Stanford / Harvard",           title:"Improving Equality of Opportunity: New Evidence and Policy Lessons", day1:"JF0MZoMOxas", day2:"anNehs-XD98", interview:"18AMOnEHxec" }
+  ],
+  stone: [
+    { year:"2025/26", speaker:"David Autor",        aff:"MIT",                          title:"Expertise, Artificial Intelligence, and the Work of the Future", video:"0ed9vghJoD0", interview:"K6dS2fvdcAI" },
+    { year:"2023/24", speaker:"Oriana Bandiera",    aff:"LSE",                          title:"The Organisation of Labor and Economic Development",         video:"KLiMEaEpuMA", interview:"OhArVyr10gI" },
+    { year:"2019/20", speaker:"Janet Currie",       aff:"Princeton",                    title:"Child Health as Human Capital",                              video:"T43k-s2sS_Q", interview:"IB8sGYjFWVI" },
+    { year:"2018/19", speaker:"Pete Klenow",        aff:"Stanford",                     title:"Firms and Growth",                                           video:"LMjNiMYnUCY", interview:"GnHqc3gWaP4" },
+    { year:"2017/18", speaker:"James Robinson",     aff:"Chicago Harris",               title:"The Emergence of Weak, Despotic and Inclusive States",       video:"Z9PGmkG6JVU" },
+    { year:"2016/17", speaker:"Timothy Besley",     aff:"LSE",                          title:"Institutions, Organizations and Cultural Evolution",         novideo:true, archive:"https://www.econ.cam.ac.uk/Stone/timothy-besley" },
+    { year:"2014/15", speaker:"Jean-Marc Robin",    aff:"Sciences Po",                  title:"Marriage, Labor Supply, and Home Production",                video:"Ltf4eD3GGco" },
+    { year:"2013/14", speaker:"John Van Reenen",    aff:"LSE",                          title:"Boss-onomics: Taking the Measure of Management",             video:"FcIuLogf-SE" },
+    { year:"2012/13", speaker:"Debraj Ray",         aff:"NYU",                          title:"Ethnicity and Conflict",                                     video:"KXtn1KQPIvc" },
+    { year:"2011/12", speaker:"Susan Athey",        aff:"Stanford",                     title:"Structural Models and Market Design in the Age of Experimentation", video:"adQ3S23NO1g" },
+    { year:"2010/11", speaker:"Angus Deaton",       aff:"Princeton",                    title:"The Shape of the World: Measuring Global Development",       video:"zciaJ4sbAEs" },
+    { year:"2009/10", speaker:"David Laibson",      aff:"Harvard",                      title:"Asset Bubbles and Economic Dynamics",                        video:"ogtc0MSNVBc" }
+  ],
+  keynes: [
+    { year:"2024/25", speaker:"Jordi Galí",             aff:"CREI",                  title:"Rethinking the New Keynesian Model",                              video:"I0QdP1Q4ibQ", interview:"vrlvJwOHHW0" },
+    { year:"2023/24", speaker:"Markus K. Brunnermeier", aff:"Princeton",             title:"The International Monetary System and Safe Assets",                video:"SE50FhycSLw", interview:"zfccOctoaLA" },
+    { year:"2022/23", speaker:"Xavier Gabaix",          aff:"Harvard",               title:"Economic Networks: New Models, Facts, and Identification Methods", video:"TDNX0M2VkSk", interview:"GjIbT8BjetM" },
+    { year:"2021/22", speaker:"Hélène Rey",             aff:"London Business School", title:"Is this Time Different? Financial Follies across Centuries",      video:"eNUP_eL0kN8", interview:"j2oc7bK8pKY" },
+    { year:"2019/20", speaker:"Christina Romer",        aff:"Berkeley",              title:"The Narrative Approach to Establishing Causation in Macroeconomics", video:"BCFOFpv49Ss", intro:"-Fb2zghxqUU" },
+    { year:"2018/19", speaker:"Hyun Song Shin",         aff:"Bank for International Settlements", title:"Distributed Ledger Technology and the Payment System",    novideo:true },
+    { year:"2017/18", speaker:"Jean Tirole",            aff:"Toulouse School of Economics", title:"Morality and the Market (inaugural Keynes Lecture)",        video:"DGvoJukUPn0" }
+  ],
+  meade: [
+    { year:"2023/24", speaker:"Ulrike Malmendier", aff:"Berkeley", title:"The Long-term Effects of Crisis Experiences: CEO Stress, Aging, and Death", video:"mrtWQ5yhVaE" },
+    { year:"2018/19", speaker:"Elhanan Helpman",  aff:"Harvard",  title:"Identity Politics and Trade Policy",                                          video:"08wwL5ygvnM" },
+    { year:"2016/17", speaker:"Dani Rodrik",       aff:"Harvard",  title:"Is the Era of Growth Miracles Over? (inaugural)",                            video:"L3jJYzZjWLI" }
+  ]
+};
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function thumbUrl(id){
+  // hqdefault is reliable. maxresdefault sometimes 404s for older videos.
+  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+}
+
+function watchLink(id){ return `https://www.youtube.com/watch?v=${id}`; }
+
+function card(lec, opts={}){
+  const featured = opts.featured ? "featured" : "";
+  const primary = lec.video || lec.day1 || lec.interview || null;
+
+  let thumb = "";
+  if (primary){
+    thumb = `<div class="thumb-wrap" data-vid="${primary}" role="button" tabindex="0" aria-label="Play lecture">
+      <img src="${thumbUrl(primary)}" alt="" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${primary}/mqdefault.jpg'">
+      <div class="play"></div>
+      <div class="duration">${lec.day1 ? "Day 1" : (lec.video ? "Lecture" : "Interview")}</div>
+    </div>`;
+  } else {
+    thumb = `<div class="no-video">Lecture given but no public recording available${lec.archive?` · <a href="${lec.archive}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Faculty page</a>`:""}</div>`;
+  }
+
+  const extras = [];
+  if (lec.day2) extras.push(`<button class="play-extra" data-vid="${lec.day2}" data-label="Day 2">▶ Day 2</button>`);
+  if (lec.interview) extras.push(`<button class="play-extra" data-vid="${lec.interview}" data-label="Interview">▶ Interview</button>`);
+  if (lec.intro) extras.push(`<button class="play-extra" data-vid="${lec.intro}" data-label="Introduction">▶ Introduction</button>`);
+  if (primary) extras.push(`<a href="${watchLink(primary)}" target="_blank" rel="noopener">YouTube ↗</a>`);
+
+  return `<article class="lecture-card ${featured}">
+    ${thumb}
+    <div class="lecture-meta">
+      <div class="year">${lec.year}</div>
+      <div class="speaker">${lec.speaker}<span class="aff">${lec.aff}</span></div>
+      <div class="title">"${lec.title}"</div>
+      ${extras.length ? `<div class="extras">${extras.join("")}</div>` : ""}
+    </div>
+  </article>`;
+}
+
+function renderSeries(key){
+  const list = LECTURES[key];
+  const root = document.getElementById(`${key}-lectures`);
+  root.innerHTML = list.map((lec, i) => card(lec, { featured: i===0 })).join("");
+}
+
+["marshall","stone","keynes","meade"].forEach(renderSeries);
+
+/* ============================================================
+   PLAY HANDLERS
+   ============================================================ */
+function makePlayer(vid, autoplay=true){
+  const iframe = document.createElement("iframe");
+  iframe.src = `https://www.youtube-nocookie.com/embed/${vid}?rel=0${autoplay?"&autoplay=1":""}`;
+  iframe.setAttribute("title","YouTube lecture player");
+  iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+  iframe.setAttribute("allowfullscreen","");
+  return iframe;
+}
+
+function swapToPlayer(thumbWrap, vid){
+  thumbWrap.innerHTML = "";
+  thumbWrap.appendChild(makePlayer(vid, true));
+  thumbWrap.style.cursor = "default";
+}
+
+// Click on a card thumbnail
+document.addEventListener("click", (e) => {
+  const thumb = e.target.closest(".thumb-wrap[data-vid]");
+  if (thumb){
+    swapToPlayer(thumb, thumb.dataset.vid);
+    return;
+  }
+  // Click on "Day 2" / "Interview" button — swap the card's thumb to that video
+  const extra = e.target.closest("button.play-extra");
+  if (extra){
+    const card = extra.closest(".lecture-card");
+    const tw = card.querySelector(".thumb-wrap");
+    if (tw){
+      swapToPlayer(tw, extra.dataset.vid);
+    }
+  }
+});
+
+// Keyboard support
+document.addEventListener("keydown", (e) => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.matches(".thumb-wrap[data-vid]")){
+    e.preventDefault();
+    swapToPlayer(e.target, e.target.dataset.vid);
+  }
+});
+</script>
+</body>
+</html>
